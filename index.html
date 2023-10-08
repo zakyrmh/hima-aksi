@@ -5,82 +5,206 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HIMA-AKSI</title>
+    <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
     <link href="css/style.css" rel="stylesheet">
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 
 <body>
-    <header class="fixed navbar bg-base-100 z-50">
-        <div class="navbar-start">
-            <div class="dropdown" x-data="{
-                open: false,
-                toggle() {
-                    if (this.open) {
-                        return this.close()
-                    }
-     
-                    this.$refs.button.focus()
-     
-                    this.open = true
-                },
-                close(focusAfter) {
-                    if (! this.open) return
-     
-                    this.open = false
-     
-                    focusAfter && focusAfter.focus()
-                }
-            }" x-on:keydown.escape.prevent.stop="close($refs.button)"
-                x-on:focusin.window="! $refs.panel.contains($event.target) && close()" x-id="['dropdown-button']">
-                <button class="btn btn-ghost lg:hidden" x-ref="button" x-on:click="toggle()" :aria-expanded="open"
-                    :aria-controls="$id('dropdown-button')" type="button">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
-                        stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M4 6h16M4 12h8m-8 6h16" />
-                    </svg>
-                </button>
-                <ul class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
-                    x-ref="panel" x-show="open" x-transition.origin.top.left x-on:click.outside="close($refs.button)"
-                    :id="$id('dropdown-button')" style="display: none;">
-                    <li><a>Home</a></li>
+    <header class="fixed top-0 flex justify-between items-center w-full h-16 bg-base-100 px-8 z-50">
+        <div>
+            <a class="flex items-center gap-3" href="index.html">
+                <img class="w-8 h-8" src="img/logo.png" alt="">
+                <h1 class="text-xl font-bold">HIMA-AKSI</h1>
+            </a>
+        </div>
+        <div x-data="{ open: false }">
+            <button @click="open = !open" :aria-expanded="open ? 'true' : 'false'" class="md:hidden">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+            </button>
+            <div x-show="open" @click.away="open = false">
+                <ul class="bg-base-100 absolute flex flex-col top-16 left-0 justify-center gap-4 w-full px-8 py-4">
                     <li>
-                        <a>About</a>
-                        <ul class="p-2">
-                            <li><a>Pengkajian Akuntansi</a></li>
-                            <li><a>Kewirausahaan</a></li>
-                            <li><a>Komunikasi dan Informasi</a></li>
-                            <li><a>Pengembangan Sumber Daya Organisasi</a></li>
-                            <li><a>Minat dan Bakat</a></li>
-                            <li><a>Pengabdian Masyarakat</a></li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li x-data="{ open: false }">
+                        <div class="flex items-center gap-2" @click="open = !open"
+                            :aria-expanded="open ? 'true' : 'false'">
+                            <a href="about.html">About</a>
+                            <button>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                                </svg>
+                            </button>
+                        </div>
+                        <ul class="gap-4 ml-4" x-show="open" @click.away="open = false">
+                            <li x-data="{ open: false }">
+                                <div class="flex items-center gap-2" @click="open = !open"
+                                    :aria-expanded="open ? 'true' : 'false'">
+                                    <a href="bidang1.html">Bidang 1</a>
+                                    <button>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                                        </svg>
+                                    </button>
+                                </div>
+                                <ul class="gap-4 ml-4" x-show="open" @click.away="open = false">
+                                    <li>
+                                        <a href="bidang1/pengajianAkuntansi.html">Pengajian Akuntansi</a>
+                                    </li>
+                                    <li>
+                                        <a href="bidang1/kewirausahaan.html">Kewirausahaan</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li x-data="{ open: false }">
+                                <div class="flex items-center gap-2" @click="open = !open"
+                                    :aria-expanded="open ? 'true' : 'false'">
+                                    <a href="bidang2.html">Bidang 2</a>
+                                    <button>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                                        </svg>
+                                    </button>
+                                </div>
+                                <ul class="gap-4 ml-4" x-show="open" @click.away="open = false">
+                                    <li>
+                                        <a href="bidang2/pengembanganSumberDayaOrganisasi.html">Pengembangan Sumber Daya
+                                            Organisasi</a>
+                                    </li>
+                                    <li>
+                                        <a href="bidang2/komunikasiDanInformasi.html">Komunikasi dan Informasi</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li x-data="{ open: false }">
+                                <div class="flex items-center gap-2" @click="open = !open"
+                                    :aria-expanded="open ? 'true' : 'false'">
+                                    <a href="bidang3.html">Bidang 3</a>
+                                    <button>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                                        </svg>
+                                    </button>
+                                </div>
+                                <ul class="gap-4 ml-4" x-show="open" @click.away="open = false">
+                                    <li>
+                                        <a href="bidang3/minatDanBakat.html">Minat dan Bakat</a>
+                                    </li>
+                                    <li>
+                                        <a href="bidang3/penagbdianMasyarakat.html">Pengabdian Masyarakat</a>
+                                    </li>
+                                </ul>
+                            </li>
                         </ul>
                     </li>
-                    <li><a>Corner</a></li>
+                    <li>
+                        <a href="galery.html">Galery</a>
+                    </li>
                 </ul>
             </div>
-            <a class="btn btn-ghost normal-case text-xl">HIMA-AKSI</a>
-        </div>
-        <div class="navbar-center hidden lg:flex">
-            <ul class="menu menu-horizontal px-1">
-                <li><a>Home</a></li>
-                <li tabindex="0">
-                    <details>
-                        <summary>About</summary>
-                        <ul class="p-2">
-                            <li><a>Pengkajian Akuntansi</a></li>
-                            <li><a>Kewirausahaan</a></li>
-                            <li><a>Komunikasi dan Informasi</a></li>
-                            <li><a>Pengembangan Sumber Daya Organisasi</a></li>
-                            <li><a>Minat dan Bakat</a></li>
-                            <li><a>Pengabdian Masyarakat</a></li>
+            <div class="hidden md:block">
+                <ul class="flex justify-center gap-4 w-full px-8 py-4">
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li x-data="{ open: false }">
+                        <div class="flex items-center gap-2" @click="open = !open"
+                            :aria-expanded="open ? 'true' : 'false'">
+                            <a href="about.html">About</a>
+                            <button>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                                </svg>
+                            </button>
+                        </div>
+                        <ul class="gap-4 p-4 absolute mt-5 w-40 rounded-md bg-white shadow-md" x-show="open"
+                            @click.away="open = false">
+                            <li x-data="{ open: false }">
+                                <div class="flex items-center gap-2" @click="open = !open"
+                                    :aria-expanded="open ? 'true' : 'false'">
+                                    <a href="bidang1.html">Bidang 1</a>
+                                    <button>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                                        </svg>
+                                    </button>
+                                </div>
+                                <ul class="gap-4 ml-4" x-show="open" @click.away="open = false">
+                                    <li>
+                                        <a href="bidang1/pengajianAkuntansi.html">Pengajian Akuntansi</a>
+                                    </li>
+                                    <li>
+                                        <a href="bidang1/kewirausahaan.html">Kewirausahaan</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li x-data="{ open: false }">
+                                <div class="flex items-center gap-2" @click="open = !open"
+                                    :aria-expanded="open ? 'true' : 'false'">
+                                    <a href="bidang2.html">Bidang 2</a>
+                                    <button>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                                        </svg>
+                                    </button>
+                                </div>
+                                <ul class="gap-4 ml-4" x-show="open" @click.away="open = false">
+                                    <li>
+                                        <a href="bidang2/pengembanganSumberDayaOrganisasi.html">Pengembangan Sumber Daya
+                                            Organisasi</a>
+                                    </li>
+                                    <li>
+                                        <a href="bidang2/komunikasiDanInformasi.html">Komunikasi dan Informasi</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li x-data="{ open: false }">
+                                <div class="flex items-center gap-2" @click="open = !open"
+                                    :aria-expanded="open ? 'true' : 'false'">
+                                    <a href="bidang3.html">Bidang 3</a>
+                                    <button>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                                        </svg>
+                                    </button>
+                                </div>
+                                <ul class="gap-4 ml-4" x-show="open" @click.away="open = false">
+                                    <li>
+                                        <a href="bidang3/minatDanBakat.html">Minat dan Bakat</a>
+                                    </li>
+                                    <li>
+                                        <a href="bidang3/penagbdianMasyarakat.html">Pengabdian Masyarakat</a>
+                                    </li>
+                                </ul>
+                            </li>
                         </ul>
-                    </details>
-                </li>
-                <li><a>Corner</a></li>
-            </ul>
-        </div>
-        <div class="navbar-end">
-            <a class="btn">Login</a>
+                    </li>
+                    <li>
+                        <a href="galery.html">Galery</a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </header>
     <main class="mx-4 sm:mx-6 md:mx-12 lg:mx-20">
@@ -117,7 +241,7 @@
                 Singaperbangsa</h2>
             <div class="flex flex-col justify-center mx-auto md:flex-row md:gap-6 md:max-w-3xl">
                 <img src="img/logo.png" alt="" class="w-60 h-60 mx-auto mb-4">
-                <p class="text-sm text-justify text-gray-700">HIMA-AKSI merupakan Organisasi Mahasiswa Prodi Akuntansi
+                <p class="text-sm text-justify text-slate-500">HIMA-AKSI merupakan Organisasi Mahasiswa Prodi Akuntansi
                     yang
                     mewadahi
                     aspirasi dan kreativitas Mahasiswa
@@ -132,10 +256,11 @@
             </div>
         </section>
         <!-- Visi Misi -->
-        <section class="mt-16 flex flex-col gap-4 items-center justify-center md:flex-row md:items-start">
+        <section class="mt-16 flex flex-col gap-4 items-center justify-center md:flex-row md:items-stretch">
             <div class="card w-96 bg-base-100 shadow-xl p-4">
                 <h3 class="text-center text-2xl font-semibold text-gray-900 mb-3">Visi</h3>
-                <p class="text-justify text-sm">Menjadikan HIMA-AKSI sebagai organisasi mahasiswa yang menjunjung tinggi
+                <p class="text-justify text-sm text-slate-500">Menjadikan HIMA-AKSI sebagai organisasi mahasiswa yang
+                    menjunjung tinggi
                     rasa
                     kekeluargaan,
                     profesionalisme, dan mengembangkan kualitas, kreativitas serta intelektualitas pengurus agar
@@ -144,7 +269,7 @@
             </div>
             <div class="card w-96 bg-base-100 shadow-xl p-4">
                 <h2 class="text-center text-2xl font-semibold text-gray-900 mb-3">Misi</h2>
-                <ul class="list-disc text-sm pl-4 text-justify">
+                <ul class="list-disc text-sm pl-4 text-justify text-slate-500">
                     <li>
                         Menciptakan ikatan erat pengurus HIMA-AKSI yang selanjutnya mempererat hubungan dengan
                         mahasiswa akuntansi FE UNSIKA serta menjalin komunikasi baik kepada civitas FE UNSIKA
@@ -194,11 +319,11 @@
             <div class="flex flex-col gap-4 items-center justify-center md:flex-row">
                 <div class="card w-96 bg-base-100 shadow-xl">
                     <figure class="px-10 pt-10">
-                        <img src="img/logo_accfess.png" alt="Shoes" class="rounded-xl w-32" />
+                        <img src="img/logo_accfess2.png" alt="Shoes" class="rounded-xl w-32" />
                     </figure>
                     <div class="card-body items-center text-center">
                         <h2 class="card-title">Accounting Festival of Singaperbangsa (ACCFES)</h2>
-                        <p class="text-sm text-justify line-clamp-3">ACCFES merupakan acara yang diadakan setiap
+                        <p class="text-sm text-justify line-clamp-3 text-slate-500">ACCFES merupakan acara yang diadakan setiap
                             tahunnya, yang
                             bertujuan untuk meningkatkan kompetensi serta sebagai ajang untuk menuangkan gagasan,
                             meningkatkan pengetahuan dan kemampuan para peserta didik di tingkat SMA/SMK sederajat untuk
@@ -218,7 +343,7 @@
                     </figure>
                     <div class="card-body items-center text-center">
                         <h2 class="card-title">Dies Natalis HIMA-AKSI</h2>
-                        <p class="text-sm text-justify line-clamp-3">Dies Natalis merupakan acara yang diadakan setiap
+                        <p class="text-sm text-justify line-clamp-3 text-slate-500">Dies Natalis merupakan acara yang diadakan setiap
                             tahun
                             oleh pengurus himpunan mahasiswa akuntansi untuk memperingati hari ulang tahun HIMA-AKSI.
                             Acara tersebut didasari atas keinginan untuk merangkul seluruh mahasiswa/i akuntansi
@@ -236,58 +361,65 @@
             <h2 class="text-center text-3xl font-semibold text-gray-900 mb-6">Struktur HIMA-AKSI</h2>
             <div class="flex gap-4 justify-center mb-4">
                 <div class="card card-side bg-base-100 shadow-xl flex-col w-40 px-4 sm:w-72 sm:flex-row">
-                    <figure><img src="img/no-profil.jpg" alt="Movie" class="w-24" /></figure>
-                    <div class="text-center mb-6 sm:flex sm:flex-col sm:justify-center sm:mb-0">
-                        <h2 class="text-sm text-sm font-semibold text-xl">M. A. Dian Nugraha</h2>
-                        <p class=" class=" text-xs"text-xs">Ketua HIMA-AKSI</p>
+                    <figure><img src="img/M. A. Dian Nugraha.png" alt="Movie" class="sm:w-24" /></figure>
+                    <div
+                        class="text-center mb-6 mt-4 sm:flex sm:flex-col sm:justify-center sm:text-left sm:ml-4 sm:mt-0 sm:mb-0">
+                        <h2 class="text-sm font-semibold">M. A. Dian Nugraha</h2>
+                        <p class="text-sm">Ketua HIMA-AKSI</p>
                     </div>
                 </div>
                 <div class="card card-side bg-base-100 shadow-xl flex-col w-40 px-4 sm:w-72 sm:flex-row">
-                    <figure><img src="img/no-profil.jpg" alt="Movie" class="w-24" /></figure>
-                    <div class="text-center mb-6 sm:flex sm:flex-col sm:justify-center sm:mb-0">
-                        <h2 class="text-sm font-semibold text-xl">Az-Zubair Ainur R.</h2>
+                    <figure><img src="img/Az-Zubair Ainur R..png" alt="Movie" class="sm:w-24" /></figure>
+                    <div
+                        class="text-center mb-6 mt-4 sm:flex sm:flex-col sm:justify-center sm:text-left sm:ml-4 sm:mt-0 sm:mb-0">
+                        <h2 class="text-sm font-semibold">Az-Zubair Ainur R.</h2>
                         <p class="text-xs">Wakil Ketua HIMA-AKSI</p>
                     </div>
                 </div>
             </div>
             <div class="flex gap-4 justify-center mb-4">
                 <div class="card card-side bg-base-100 shadow-xl flex-col w-40 px-4 sm:w-72 sm:flex-row">
-                    <figure><img src="img/no-profil.jpg" alt="Movie" class="w-24" /></figure>
-                    <div class="text-center mb-6 sm:flex sm:flex-col sm:justify-center sm:mb-0">
-                        <h2 class="text-sm font-semibold text-xl">Gita Hartawan</h2>
+                    <figure><img src="img/Gita Hartawan.png" alt="Movie" class="sm:w-24" /></figure>
+                    <div
+                        class="text-center mb-6 mt-4 sm:flex sm:flex-col sm:justify-center sm:text-left sm:ml-4 sm:mt-0 sm:mb-0">
+                        <h2 class="text-sm font-semibold">Gita Hartawan</h2>
                         <p class="text-xs">Sekretaris HIMA-AKSI</p>
                     </div>
                 </div>
                 <div class="card card-side bg-base-100 shadow-xl flex-col w-40 px-4 sm:w-72 sm:flex-row">
-                    <figure><img src="img/no-profil.jpg" alt="Movie" class="w-24" /></figure>
-                    <div class="text-center mb-6 sm:flex sm:flex-col sm:justify-center sm:mb-0">
-                        <h2 class="text-sm font-semibold text-xl">Siti Nurul Hijayanti</h2>
-                        <p class="text-xs">Bendahara Ketua HIMA-AKSI</p>
+                    <figure><img src="img/Siti Nurul Hijayanti.png" alt="Movie" class="sm:w-24" /></figure>
+                    <div
+                        class="text-center mb-6 mt-4 sm:flex sm:flex-col sm:justify-center sm:text-left sm:ml-4 sm:mt-0 sm:mb-0">
+                        <h2 class="text-sm font-semibold">Siti Nurul Hijayanti</h2>
+                        <p class="text-xs">Bendahara HIMA-AKSI</p>
                     </div>
                 </div>
             </div>
             <h3 class="text-center text-2xl font-semibold text-gray-900 mt-10 mb-4">Bidang 1</h3>
             <div class="flex gap-4 justify-center mb-4">
                 <div class="card card-side bg-base-100 shadow-xl flex-col w-40 px-4 sm:w-72 sm:flex-row">
-                    <figure><img src="img/no-profil.jpg" alt="Movie" class="w-24" /></figure>
-                    <div class="text-center mb-6 sm:flex sm:flex-col sm:justify-center sm:mb-0">
-                        <h2 class="text-sm font-semibold text-xl">Nadya Zhulfania</h2>
+                    <figure><img src="img/Nadya Zhulfania.png" alt="Movie" class="sm:w-24" /></figure>
+                    <div
+                        class="text-center mb-6 mt-4 sm:flex sm:flex-col sm:justify-center sm:text-left sm:ml-4 sm:mt-0 sm:mb-0">
+                        <h2 class="text-sm font-semibold">Nadya Zhulfania</h2>
                         <p class="text-xs">Koordinator Bidang 1</p>
                     </div>
                 </div>
             </div>
             <div class="flex gap-4 justify-center mb-4">
                 <div class="card card-side bg-base-100 shadow-xl flex-col w-40 px-4 sm:w-72 sm:flex-row">
-                    <figure><img src="img/no-profil.jpg" alt="Movie" class="w-24" /></figure>
-                    <div class="text-center mb-6 sm:flex sm:flex-col sm:justify-center sm:mb-0">
-                        <h2 class="text-sm font-semibold text-xl">Eby Khoirunnisa S.</h2>
+                    <figure><img src="img/Eby Khoirunnisa S..png" alt="Movie" class="sm:w-24" /></figure>
+                    <div
+                        class="text-center mb-6 mt-4 sm:flex sm:flex-col sm:justify-center sm:text-left sm:ml-4 sm:mt-0 sm:mb-0">
+                        <h2 class="text-sm font-semibold">Eby Khoirunnisa S.</h2>
                         <p class="text-xs">Litbang Bidang 1</p>
                     </div>
                 </div>
                 <div class="card card-side bg-base-100 shadow-xl flex-col w-40 px-4 sm:w-72 sm:flex-row">
-                    <figure><img src="img/no-profil.jpg" alt="Movie" class="w-24" /></figure>
-                    <div class="text-center mb-6 sm:flex sm:flex-col sm:justify-center sm:mb-0">
-                        <h2 class="text-sm font-semibold text-xl">Nayla Rachman D.</h2>
+                    <figure><img src="img/Naila Rachma D..png" alt="Movie" class="sm:w-24" /></figure>
+                    <div
+                        class="text-center mb-6 mt-4 sm:flex sm:flex-col sm:justify-center sm:text-left sm:ml-4 sm:mt-0 sm:mb-0">
+                        <h2 class="text-sm font-semibold">Nayla Rachman D.</h2>
                         <p class="text-xs">Bendahara Bidang 1</p>
                     </div>
                 </div>
@@ -295,39 +427,44 @@
             <h3 class="text-center text-2xl font-semibold text-gray-900 mt-10 mb-4">Pengajian Akuntansi</h3>
             <div class="flex gap-4 justify-center mb-4">
                 <div class="card card-side bg-base-100 shadow-xl flex-col w-40 px-4 sm:w-72 sm:flex-row">
-                    <figure><img src="img/no-profil.jpg" alt="Movie" class="w-24" /></figure>
-                    <div class="text-center mb-6 sm:flex sm:flex-col sm:justify-center sm:mb-0">
-                        <h2 class="text-sm font-semibold text-xl">Bintang Ramadhan</h2>
+                    <figure><img src="img/Bintang Ramadhan.png" alt="Movie" class="sm:w-24" /></figure>
+                    <div
+                        class="text-center mb-6 mt-4 sm:flex sm:flex-col sm:justify-center sm:text-left sm:ml-4 sm:mt-0 sm:mb-0">
+                        <h2 class="text-sm font-semibold">Bintang Ramadhan</h2>
                         <p class="text-xs">Kepala Divisi Pengajian Akuntansi</p>
                     </div>
                 </div>
             </div>
-            <div class="grid gap-4 grid-cols-2 items-start justify-items-center justify-center items-stretch mb-4">
+            <div class="grid gap-4 grid-cols-2 justify-items-center justify-center items-stretch mb-4">
                 <div class="card card-side bg-base-100 shadow-xl flex-col self-auto w-40 px-4 sm:w-72 sm:flex-row">
-                    <figure><img src="img/no-profil.jpg" alt="Movie" class="w-24" /></figure>
-                    <div class="text-center mb-6 sm:flex sm:flex-col sm:justify-center sm:mb-0">
-                        <h2 class="text-sm font-semibold text-xl">Jona Amsal Gultom</h2>
+                    <figure><img src="img/Jona Amsal Gultom.png" alt="Movie" class="sm:w-24" /></figure>
+                    <div
+                        class="text-center mb-6 mt-4 sm:flex sm:flex-col sm:justify-center sm:text-left sm:ml-4 sm:mt-0 sm:mb-0">
+                        <h2 class="text-sm font-semibold">Jona Amsal Gultom</h2>
                         <p class="text-xs">Anggota Divisi Pengajian Akuntansi</p>
                     </div>
                 </div>
                 <div class="card card-side bg-base-100 shadow-xl flex-col self-auto w-40 px-4 sm:w-72 sm:flex-row">
-                    <figure><img src="img/no-profil.jpg" alt="Movie" class="w-24" /></figure>
-                    <div class="text-center mb-6 sm:flex sm:flex-col sm:justify-center sm:mb-0">
-                        <h2 class="text-sm font-semibold text-xl">Naila Nura'ini</h2>
+                    <figure><img src="img/Naila Nura'ini.png" alt="Movie" class="sm:w-24" /></figure>
+                    <div
+                        class="text-center mb-6 mt-4 sm:flex sm:flex-col sm:justify-center sm:text-left sm:ml-4 sm:mt-0 sm:mb-0">
+                        <h2 class="text-sm font-semibold">Naila Nura'ini</h2>
                         <p class="text-xs">Anggota Divisi Pengajian Akuntansi</p>
                     </div>
                 </div>
                 <div class="card card-side bg-base-100 shadow-xl flex-col self-auto w-40 px-4 sm:w-72 sm:flex-row">
-                    <figure><img src="img/no-profil.jpg" alt="Movie" class="w-24" /></figure>
-                    <div class="text-center mb-6 sm:flex sm:flex-col sm:justify-center sm:mb-0">
-                        <h2 class="text-sm font-semibold text-xl">Polinda</h2>
+                    <figure><img src="img/Polinda.png" alt="Movie" class="sm:w-24" /></figure>
+                    <div
+                        class="text-center mb-6 mt-4 sm:flex sm:flex-col sm:justify-center sm:text-left sm:ml-4 sm:mt-0 sm:mb-0">
+                        <h2 class="text-sm font-semibold">Polinda</h2>
                         <p class="text-xs">Anggota Divisi Pengajian Akuntansi</p>
                     </div>
                 </div>
                 <div class="card card-side bg-base-100 shadow-xl flex-col self-auto w-40 px-4 sm:w-72 sm:flex-row">
-                    <figure><img src="img/no-profil.jpg" alt="Movie" class="w-24" /></figure>
-                    <div class="text-center mb-6 sm:flex sm:flex-col sm:justify-center sm:mb-0">
-                        <h2 class="text-sm font-semibold text-xl">Silviana Futri Cantika</h2>
+                    <figure><img src="img/Silviana Futri Cantika.png" alt="Movie" class="sm:w-24" /></figure>
+                    <div
+                        class="text-center mb-6 mt-4 sm:flex sm:flex-col sm:justify-center sm:text-left sm:ml-4 sm:mt-0 sm:mb-0">
+                        <h2 class="text-sm font-semibold">Silviana Futri Cantika</h2>
                         <p class="text-xs">Anggota Divisi Pengajian Akuntansi</p>
                     </div>
                 </div>
@@ -335,39 +472,44 @@
             <h3 class="text-center text-2xl font-semibold text-gray-900 mt-10 mb-4">Devisi Kewirausahaan</h3>
             <div class="flex gap-4 justify-center mb-4">
                 <div class="card card-side bg-base-100 shadow-xl flex-col w-40 px-4 sm:w-72 sm:flex-row">
-                    <figure><img src="img/no-profil.jpg" alt="Movie" class="w-24" /></figure>
-                    <div class="text-center mb-6 sm:flex sm:flex-col sm:justify-center sm:mb-0">
-                        <h2 class="text-sm font-semibold text-xl">Nadya Putri</h2>
+                    <figure><img src="img/Nadya Putri.png" alt="Movie" class="sm:w-24" /></figure>
+                    <div
+                        class="text-center mb-6 mt-4 sm:flex sm:flex-col sm:justify-center sm:text-left sm:ml-4 sm:mt-0 sm:mb-0">
+                        <h2 class="text-sm font-semibold">Nadya Putri</h2>
                         <p class="text-xs">Kepala Devisi Kewirausahaan</p>
                     </div>
                 </div>
             </div>
-            <div class="grid gap-4 grid-cols-2 items-start justify-items-center justify-center items-stretch mb-4">
+            <div class="grid gap-4 grid-cols-2 justify-items-center justify-center items-stretch mb-4">
                 <div class="card card-side bg-base-100 shadow-xl flex-col self-auto w-40 px-4 sm:w-72 sm:flex-row">
-                    <figure><img src="img/no-profil.jpg" alt="Movie" class="w-24" /></figure>
-                    <div class="text-center mb-6 sm:flex sm:flex-col sm:justify-center sm:mb-0">
-                        <h2 class="text-sm font-semibold text-xl">Fera Ferdianty</h2>
+                    <figure><img src="img/Fera Ferdianty.png" alt="Movie" class="sm:w-24" /></figure>
+                    <div
+                        class="text-center mb-6 mt-4 sm:flex sm:flex-col sm:justify-center sm:text-left sm:ml-4 sm:mt-0 sm:mb-0">
+                        <h2 class="text-sm font-semibold">Fera Ferdianty</h2>
                         <p class="text-xs">Anggota Divisi Kewirausahaan</p>
                     </div>
                 </div>
                 <div class="card card-side bg-base-100 shadow-xl flex-col self-auto w-40 px-4 sm:w-72 sm:flex-row">
-                    <figure><img src="img/no-profil.jpg" alt="Movie" class="w-24" /></figure>
-                    <div class="text-center mb-6 sm:flex sm:flex-col sm:justify-center sm:mb-0">
-                        <h2 class="text-sm font-semibold text-xl">Kayla Faritza Hani</h2>
+                    <figure><img src="img/Kayla Faritza Hani.png" alt="Movie" class="sm:w-24" /></figure>
+                    <div
+                        class="text-center mb-6 mt-4 sm:flex sm:flex-col sm:justify-center sm:text-left sm:ml-4 sm:mt-0 sm:mb-0">
+                        <h2 class="text-sm font-semibold">Kayla Faritza Hani</h2>
                         <p class="text-xs">Anggota Divisi Kewirausahaan</p>
                     </div>
                 </div>
                 <div class="card card-side bg-base-100 shadow-xl flex-col self-auto w-40 px-4 sm:w-72 sm:flex-row">
-                    <figure><img src="img/no-profil.jpg" alt="Movie" class="w-24" /></figure>
-                    <div class="text-center mb-6 sm:flex sm:flex-col sm:justify-center sm:mb-0">
-                        <h2 class="text-sm font-semibold text-xl">Kylla Sumarna</h2>
+                    <figure><img src="img/Kylla Sumarna.png" alt="Movie" class="sm:w-24" /></figure>
+                    <div
+                        class="text-center mb-6 mt-4 sm:flex sm:flex-col sm:justify-center sm:text-left sm:ml-4 sm:mt-0 sm:mb-0">
+                        <h2 class="text-sm font-semibold">Kylla Sumarna</h2>
                         <p class="text-xs">Anggota Divisi Kewirausahaan</p>
                     </div>
                 </div>
                 <div class="card card-side bg-base-100 shadow-xl flex-col self-auto w-40 px-4 sm:w-72 sm:flex-row">
-                    <figure><img src="img/no-profil.jpg" alt="Movie" class="w-24" /></figure>
-                    <div class="text-center mb-6 sm:flex sm:flex-col sm:justify-center sm:mb-0">
-                        <h2 class="text-sm font-semibold text-xl">Ragel Mar The Nus</h2>
+                    <figure><img src="img/Ragel Mar The Nus.png" alt="Movie" class="sm:w-24" /></figure>
+                    <div
+                        class="text-center mb-6 mt-4 sm:flex sm:flex-col sm:justify-center sm:text-left sm:ml-4 sm:mt-0 sm:mb-0">
+                        <h2 class="text-sm font-semibold">Ragel Mar The Nus</h2>
                         <p class="text-xs">Anggota Divisi Kewirausahaan</p>
                     </div>
                 </div>
@@ -375,25 +517,28 @@
             <h3 class="text-center text-2xl font-semibold text-gray-900 mt-10 mb-4">Bidang 2</h3>
             <div class="flex gap-4 justify-center mb-4">
                 <div class="card card-side bg-base-100 shadow-xl flex-col w-40 px-4 sm:w-72 sm:flex-row">
-                    <figure><img src="img/no-profil.jpg" alt="Movie" class="w-24" /></figure>
-                    <div class="text-center mb-6 sm:flex sm:flex-col sm:justify-center sm:mb-0">
-                        <h2 class="text-sm font-semibold text-xl">Haikal Farrel A.</h2>
+                    <figure><img src="img/Haikal Farrel A..png" alt="Movie" class="sm:w-24" /></figure>
+                    <div
+                        class="text-center mb-6 mt-4 sm:flex sm:flex-col sm:justify-center sm:text-left sm:ml-4 sm:mt-0 sm:mb-0">
+                        <h2 class="text-sm font-semibold">Haikal Farrel A.</h2>
                         <p class="text-xs">Koordinator Bidang 2</p>
                     </div>
                 </div>
             </div>
-            <div class="grid gap-4 grid-cols-2 items-start justify-items-center justify-center items-stretch mb-4">
+            <div class="grid gap-4 grid-cols-2 justify-items-center justify-center items-stretch mb-4">
                 <div class="card card-side bg-base-100 shadow-xl flex-col self-auto w-40 px-4 sm:w-72 sm:flex-row">
-                    <figure><img src="img/no-profil.jpg" alt="Movie" class="w-24" /></figure>
-                    <div class="text-center mb-6 sm:flex sm:flex-col sm:justify-center sm:mb-0">
-                        <h2 class="text-sm font-semibold text-xl">Rheyna Anas TIara</h2>
+                    <figure><img src="img/Rheyna Anas Tiara.png" alt="Movie" class="sm:w-24" /></figure>
+                    <div
+                        class="text-center mb-6 mt-4 sm:flex sm:flex-col sm:justify-center sm:text-left sm:ml-4 sm:mt-0 sm:mb-0">
+                        <h2 class="text-sm font-semibold">Rheyna Anas Tiara</h2>
                         <p class="text-xs">Litbang Bidang 2</p>
                     </div>
                 </div>
                 <div class="card card-side bg-base-100 shadow-xl flex-col self-auto w-40 px-4 sm:w-72 sm:flex-row">
-                    <figure><img src="img/no-profil.jpg" alt="Movie" class="w-24" /></figure>
-                    <div class="text-center mb-6 sm:flex sm:flex-col sm:justify-center sm:mb-0">
-                        <h2 class="text-sm font-semibold text-xl">Shalwa Yuana Putri</h2>
+                    <figure><img src="img/Shalwa Yuana Putri.png" alt="Movie" class="sm:w-24" /></figure>
+                    <div
+                        class="text-center mb-6 mt-4 sm:flex sm:flex-col sm:justify-center sm:text-left sm:ml-4 sm:mt-0 sm:mb-0">
+                        <h2 class="text-sm font-semibold">Shalwa Yuana Putri</h2>
                         <p class="text-xs">Bendahara Bidang 2</p>
                     </div>
                 </div>
@@ -401,39 +546,44 @@
             <h3 class="text-center text-2xl font-semibold text-gray-900 mt-10 mb-4">Divisi Komunikasi dan Informasi</h3>
             <div class="flex gap-4 justify-center mb-4">
                 <div class="card card-side bg-base-100 shadow-xl flex-col w-40 px-4 sm:w-72 sm:flex-row">
-                    <figure><img src="img/no-profil.jpg" alt="Movie" class="w-24" /></figure>
-                    <div class="text-center mb-6 sm:flex sm:flex-col sm:justify-center sm:mb-0">
-                        <h2 class="text-sm font-semibold text-xl">Dauzanda Irlando</h2>
+                    <figure><img src="img/Dauzanda Irlando.png" alt="Movie" class="sm:w-24" /></figure>
+                    <div
+                        class="text-center mb-6 mt-4 sm:flex sm:flex-col sm:justify-center sm:text-left sm:ml-4 sm:mt-0 sm:mb-0">
+                        <h2 class="text-sm font-semibold">Dauzanda Irlando</h2>
                         <p class="text-xs">Kepala Divisi Kominfo</p>
                     </div>
                 </div>
             </div>
-            <div class="grid gap-4 grid-cols-2 items-start justify-items-center justify-center items-stretch mb-4">
+            <div class="grid gap-4 grid-cols-2 justify-items-center justify-center items-stretch mb-4">
                 <div class="card card-side bg-base-100 shadow-xl flex-col self-auto w-40 px-4 sm:w-72 sm:flex-row">
-                    <figure><img src="img/no-profil.jpg" alt="Movie" class="w-24" /></figure>
-                    <div class="text-center mb-6 sm:flex sm:flex-col sm:justify-center sm:mb-0">
-                        <h2 class="text-sm font-semibold text-xl">Alfina Dwi Safitri</h2>
+                    <figure><img src="img/Alfina Dwi Safitri.png" alt="Movie" class="sm:w-24" /></figure>
+                    <div
+                        class="text-center mb-6 mt-4 sm:flex sm:flex-col sm:justify-center sm:text-left sm:ml-4 sm:mt-0 sm:mb-0">
+                        <h2 class="text-sm font-semibold">Alfina Dwi Safitri</h2>
                         <p class="text-xs">Anggota Kominfo</p>
                     </div>
                 </div>
                 <div class="card card-side bg-base-100 shadow-xl flex-col self-auto w-40 px-4 sm:w-72 sm:flex-row">
-                    <figure><img src="img/no-profil.jpg" alt="Movie" class="w-24" /></figure>
-                    <div class="text-center mb-6 sm:flex sm:flex-col sm:justify-center sm:mb-0">
-                        <h2 class="text-sm font-semibold text-xl">M. Diky Fadillah</h2>
+                    <figure><img src="img/M. Diky F.png" alt="Movie" class="sm:w-24" /></figure>
+                    <div
+                        class="text-center mb-6 mt-4 sm:flex sm:flex-col sm:justify-center sm:text-left sm:ml-4 sm:mt-0 sm:mb-0">
+                        <h2 class="text-sm font-semibold">M. Diky Fadillah</h2>
                         <p class="text-xs">Anggota Kominfo</p>
                     </div>
                 </div>
                 <div class="card card-side bg-base-100 shadow-xl flex-col self-auto w-40 px-4 sm:w-72 sm:flex-row">
-                    <figure><img src="img/no-profil.jpg" alt="Movie" class="w-24" /></figure>
-                    <div class="text-center mb-6 sm:flex sm:flex-col sm:justify-center sm:mb-0">
-                        <h2 class="text-sm font-semibold text-xl">Syifa Aulia Fajrin</h2>
+                    <figure><img src="img/Syifa Aulia F.png" alt="Movie" class="sm:w-24" /></figure>
+                    <div
+                        class="text-center mb-6 mt-4 sm:flex sm:flex-col sm:justify-center sm:text-left sm:ml-4 sm:mt-0 sm:mb-0">
+                        <h2 class="text-sm font-semibold">Syifa Aulia Fajrin</h2>
                         <p class="text-xs">Anggota Kominfo</p>
                     </div>
                 </div>
                 <div class="card card-side bg-base-100 shadow-xl flex-col self-auto w-40 px-4 sm:w-72 sm:flex-row">
-                    <figure><img src="img/no-profil.jpg" alt="Movie" class="w-24" /></figure>
-                    <div class="text-center mb-6 sm:flex sm:flex-col sm:justify-center sm:mb-0">
-                        <h2 class="text-sm font-semibold text-xl">Amalia Mabruroh</h2>
+                    <figure><img src="img/AMALIA MABRUROH.png" alt="Movie" class="sm:w-24" /></figure>
+                    <div
+                        class="text-center mb-6 mt-4 sm:flex sm:flex-col sm:justify-center sm:text-left sm:ml-4 sm:mt-0 sm:mb-0">
+                        <h2 class="text-sm font-semibold">Amalia Mabruroh</h2>
                         <p class="text-xs">Anggota Kominfo</p>
                     </div>
                 </div>
@@ -442,32 +592,36 @@
                 Organisasi</h3>
             <div class="flex gap-4 justify-center mb-4">
                 <div class="card card-side bg-base-100 shadow-xl flex-col w-40 px-4 sm:w-72 sm:flex-row">
-                    <figure><img src="img/no-profil.jpg" alt="Movie" class="w-24" /></figure>
-                    <div class="text-center mb-6 sm:flex sm:flex-col sm:justify-center sm:mb-0">
-                        <h2 class="text-sm font-semibold text-xl">Farah Nur Aulia</h2>
+                    <figure><img src="img/Farah Nur Aulia.png" alt="Movie" class="sm:w-24" /></figure>
+                    <div
+                        class="text-center mb-6 mt-4 sm:flex sm:flex-col sm:justify-center sm:text-left sm:ml-4 sm:mt-0 sm:mb-0">
+                        <h2 class="text-sm font-semibold">Farah Nur Aulia</h2>
                         <p class="text-xs">Kepala Divisi PSDO</p>
                     </div>
                 </div>
             </div>
-            <div class="grid gap-4 grid-cols-2 items-start justify-items-center justify-center items-stretch mb-4">
+            <div class="grid gap-4 grid-cols-2 justify-items-center justify-center items-stretch mb-4">
                 <div class="card card-side bg-base-100 shadow-xl flex-col self-auto w-40 px-4 sm:w-72 sm:flex-row">
-                    <figure><img src="img/no-profil.jpg" alt="Movie" class="w-24" /></figure>
-                    <div class="text-center mb-6 sm:flex sm:flex-col sm:justify-center sm:mb-0">
-                        <h2 class="text-sm font-semibold text-xl">Faizal Febrian</h2>
+                    <figure><img src="img/Faizal Febrian.png" alt="Movie" class="sm:w-24" /></figure>
+                    <div
+                        class="text-center mb-6 mt-4 sm:flex sm:flex-col sm:justify-center sm:text-left sm:ml-4 sm:mt-0 sm:mb-0">
+                        <h2 class="text-sm font-semibold">Faizal Febrian</h2>
                         <p class="text-xs">Anggota PSDO</p>
                     </div>
                 </div>
                 <div class="card card-side bg-base-100 shadow-xl flex-col self-auto w-40 px-4 sm:w-72 sm:flex-row">
-                    <figure><img src="img/no-profil.jpg" alt="Movie" class="w-24" /></figure>
-                    <div class="text-center mb-6 sm:flex sm:flex-col sm:justify-center sm:mb-0">
-                        <h2 class="text-sm font-semibold text-xl">M. Dimas Abdilla P.</h2>
+                    <figure><img src="img/M. Dimas Abdilla.png" alt="Movie" class="sm:w-24" /></figure>
+                    <div
+                        class="text-center mb-6 mt-4 sm:flex sm:flex-col sm:justify-center sm:text-left sm:ml-4 sm:mt-0 sm:mb-0">
+                        <h2 class="text-sm font-semibold">M. Dimas Abdilla P.</h2>
                         <p class="text-xs">Anggota PSDO</p>
                     </div>
                 </div>
                 <div class="card card-side bg-base-100 shadow-xl flex-col self-auto w-40 px-4 sm:w-72 sm:flex-row">
-                    <figure><img src="img/no-profil.jpg" alt="Movie" class="w-24" /></figure>
-                    <div class="text-center mb-6 sm:flex sm:flex-col sm:justify-center sm:mb-0">
-                        <h2 class="text-sm font-semibold text-xl">Sandrina Claudya</h2>
+                    <figure><img src="img/Sandrina Claudya.png" alt="Movie" class="sm:w-24" /></figure>
+                    <div
+                        class="text-center mb-6 mt-4 sm:flex sm:flex-col sm:justify-center sm:text-left sm:ml-4 sm:mt-0 sm:mb-0">
+                        <h2 class="text-sm font-semibold">Sandrina Claudya</h2>
                         <p class="text-xs">Anggota PSDO</p>
                     </div>
                 </div>
@@ -475,25 +629,28 @@
             <h3 class="text-center text-2xl font-semibold text-gray-900 mt-10 mb-4">Bidang 3</h3>
             <div class="flex gap-4 justify-center mb-4">
                 <div class="card card-side bg-base-100 shadow-xl flex-col w-40 px-4 sm:w-72 sm:flex-row">
-                    <figure><img src="img/no-profil.jpg" alt="Movie" class="w-24" /></figure>
-                    <div class="text-center mb-6 sm:flex sm:flex-col sm:justify-center sm:mb-0">
-                        <h2 class="text-sm font-semibold text-xl">Magdalena Uliarta</h2>
+                    <figure><img src="img/Magdalena Uliarta.png" alt="Movie" class="sm:w-24" /></figure>
+                    <div
+                        class="text-center mb-6 mt-4 sm:flex sm:flex-col sm:justify-center sm:text-left sm:ml-4 sm:mt-0 sm:mb-0">
+                        <h2 class="text-sm font-semibold">Magdalena Uliarta</h2>
                         <p class="text-xs">Koordinator Bidang 3</p>
                     </div>
                 </div>
             </div>
-            <div class="grid gap-4 grid-cols-2 items-start justify-items-center justify-center items-stretch mb-4">
+            <div class="grid gap-4 grid-cols-2 justify-items-center justify-center items-stretch mb-4">
                 <div class="card card-side bg-base-100 shadow-xl flex-col self-auto w-40 px-4 sm:w-72 sm:flex-row">
-                    <figure><img src="img/no-profil.jpg" alt="Movie" class="w-24" /></figure>
-                    <div class="text-center mb-6 sm:flex sm:flex-col sm:justify-center sm:mb-0">
-                        <h2 class="text-sm font-semibold text-xl">Alfiyan Yudha Alfathan</h2>
+                    <figure><img src="img/Alfiyan Yudha Alfathan.png" alt="Movie" class="sm:w-24" /></figure>
+                    <div
+                        class="text-center mb-6 mt-4 sm:flex sm:flex-col sm:justify-center sm:text-left sm:ml-4 sm:mt-0 sm:mb-0">
+                        <h2 class="text-sm font-semibold">Alfiyan Yudha Alfathan</h2>
                         <p class="text-xs">Litbang Bidang 3</p>
                     </div>
                 </div>
                 <div class="card card-side bg-base-100 shadow-xl flex-col self-auto w-40 px-4 sm:w-72 sm:flex-row">
-                    <figure><img src="img/no-profil.jpg" alt="Movie" class="w-24" /></figure>
-                    <div class="text-center mb-6 sm:flex sm:flex-col sm:justify-center sm:mb-0">
-                        <h2 class="text-sm font-semibold text-xl">Ana Meliyana</h2>
+                    <figure><img src="img/Ana Meliyana.png" alt="Movie" class="sm:w-24" /></figure>
+                    <div
+                        class="text-center mb-6 mt-4 sm:flex sm:flex-col sm:justify-center sm:text-left sm:ml-4 sm:mt-0 sm:mb-0">
+                        <h2 class="text-sm font-semibold">Ana Meliyana</h2>
                         <p class="text-xs">Bendahara Bidang 3</p>
                     </div>
                 </div>
@@ -501,39 +658,44 @@
             <h3 class="text-center text-2xl font-semibold text-gray-900 mt-10 mb-4">Divisi Minat dan Bakat</h3>
             <div class="flex gap-4 justify-center mb-4">
                 <div class="card card-side bg-base-100 shadow-xl flex-col w-40 px-4 sm:w-72 sm:flex-row">
-                    <figure><img src="img/no-profil.jpg" alt="Movie" class="w-24" /></figure>
-                    <div class="text-center mb-6 sm:flex sm:flex-col sm:justify-center sm:mb-0">
-                        <h2 class="text-sm font-semibold text-xl">Ade Hendriawan</h2>
+                    <figure><img src="img/ADE HENDRIAWAN.png" alt="Movie" class="sm:w-24" /></figure>
+                    <div
+                        class="text-center mb-6 mt-4 sm:flex sm:flex-col sm:justify-center sm:text-left sm:ml-4 sm:mt-0 sm:mb-0">
+                        <h2 class="text-sm font-semibold">Ade Hendriawan</h2>
                         <p class="text-xs">Kepala MIKAT</p>
                     </div>
                 </div>
             </div>
-            <div class="grid gap-4 grid-cols-2 items-start justify-items-center justify-center items-stretch mb-4">
+            <div class="grid gap-4 grid-cols-2 justify-items-center justify-center items-stretch mb-4">
                 <div class="card card-side bg-base-100 shadow-xl flex-col self-auto w-40 px-4 sm:w-72 sm:flex-row">
-                    <figure><img src="img/no-profil.jpg" alt="Movie" class="w-24" /></figure>
-                    <div class="text-center mb-6 sm:flex sm:flex-col sm:justify-center sm:mb-0">
-                        <h2 class="text-sm font-semibold text-xl">Shania Asfi</h2>
+                    <figure><img src="img/SHANIA ASFI.png" alt="Movie" class="sm:w-24" /></figure>
+                    <div
+                        class="text-center mb-6 mt-4 sm:flex sm:flex-col sm:justify-center sm:text-left sm:ml-4 sm:mt-0 sm:mb-0">
+                        <h2 class="text-sm font-semibold">Shania Asfi</h2>
                         <p class="text-xs">Anggota MIKAT</p>
                     </div>
                 </div>
                 <div class="card card-side bg-base-100 shadow-xl flex-col self-auto w-40 px-4 sm:w-72 sm:flex-row">
-                    <figure><img src="img/no-profil.jpg" alt="Movie" class="w-24" /></figure>
-                    <div class="text-center mb-6 sm:flex sm:flex-col sm:justify-center sm:mb-0">
-                        <h2 class="text-sm font-semibold text-xl">Umy Kulsum</h2>
+                    <figure><img src="img/UMY KULSUM.png" alt="Movie" class="sm:w-24" /></figure>
+                    <div
+                        class="text-center mb-6 mt-4 sm:flex sm:flex-col sm:justify-center sm:text-left sm:ml-4 sm:mt-0 sm:mb-0">
+                        <h2 class="text-sm font-semibold">Umy Kulsum</h2>
                         <p class="text-xs">Anggota MIKAT</p>
                     </div>
                 </div>
                 <div class="card card-side bg-base-100 shadow-xl flex-col self-auto w-40 px-4 sm:w-72 sm:flex-row">
-                    <figure><img src="img/no-profil.jpg" alt="Movie" class="w-24" /></figure>
-                    <div class="text-center mb-6 sm:flex sm:flex-col sm:justify-center sm:mb-0">
-                        <h2 class="text-sm font-semibold text-xl">Sinta Oktavia</h2>
+                    <figure><img src="img/SINTA OKTAVIA.png" alt="Movie" class="sm:w-24" /></figure>
+                    <div
+                        class="text-center mb-6 mt-4 sm:flex sm:flex-col sm:justify-center sm:text-left sm:ml-4 sm:mt-0 sm:mb-0">
+                        <h2 class="text-sm font-semibold">Sinta Oktavia</h2>
                         <p class="text-xs">Anggota MIKAT</p>
                     </div>
                 </div>
                 <div class="card card-side bg-base-100 shadow-xl flex-col self-auto w-40 px-4 sm:w-72 sm:flex-row">
-                    <figure><img src="img/no-profil.jpg" alt="Movie" class="w-24" /></figure>
-                    <div class="text-center mb-6 sm:flex sm:flex-col sm:justify-center sm:mb-0">
-                        <h2 class="text-sm font-semibold text-xl">Vella Novira Fahma</h2>
+                    <figure><img src="img/VELLA NOVIRA FAHMA.png" alt="Movie" class="sm:w-24" /></figure>
+                    <div
+                        class="text-center mb-6 mt-4 sm:flex sm:flex-col sm:justify-center sm:text-left sm:ml-4 sm:mt-0 sm:mb-0">
+                        <h2 class="text-sm font-semibold">Vella Novira Fahma</h2>
                         <p class="text-xs">Anggota MIKAT</p>
                     </div>
                 </div>
@@ -541,46 +703,44 @@
             <h3 class="text-center text-2xl font-semibold text-gray-900 mt-10 mb-4">Divisi Pengabdian Masyarakat</h3>
             <div class="flex gap-4 justify-center mb-4">
                 <div class="card card-side bg-base-100 shadow-xl flex-col w-40 px-4 sm:w-72 sm:flex-row">
-                    <figure><img src="img/no-profil.jpg" alt="Movie" class="w-24" /></figure>
-                    <div class="text-center mb-6 sm:flex sm:flex-col sm:justify-center sm:mb-0">
-                        <h2 class="text-sm font-semibold text-xl">Ananda Putri R.</h2>
+                    <figure><img src="img/ANANDA PUTRI R.png" alt="Movie" class="sm:w-24" /></figure>
+                    <div
+                        class="text-center mb-6 mt-4 sm:flex sm:flex-col sm:justify-center sm:text-left sm:ml-4 sm:mt-0 sm:mb-0">
+                        <h2 class="text-sm font-semibold">Ananda Putri R.</h2>
                         <p class="text-xs">Kepala PEMA</p>
                     </div>
                 </div>
             </div>
-            <div class="grid gap-4 grid-cols-2 items-start justify-items-center justify-center items-stretch mb-4">
+            <div class="grid gap-4 grid-cols-2 justify-items-center justify-center items-stretch mb-4">
                 <div class="card card-side bg-base-100 shadow-xl flex-col self-auto w-40 px-4 sm:w-72 sm:flex-row">
-                    <figure><img src="img/no-profil.jpg" alt="Movie" class="w-24" /></figure>
-                    <div class="text-center mb-6 sm:flex sm:flex-col sm:justify-center sm:mb-0">
-                        <h2 class="text-sm font-semibold text-xl">Vella Novira Fahma</h2>
+                    <figure><img src="img/ALVITO VILBERT MANURUNG.png" alt="Movie" class="sm:w-24" /></figure>
+                    <div
+                        class="text-center mb-6 mt-4 sm:flex sm:flex-col sm:justify-center sm:text-left sm:ml-4 sm:mt-0 sm:mb-0">
+                        <h2 class="text-sm font-semibold">Alvito Vilbert Manurung</h2>
                         <p class="text-xs">Anggota PEMA</p>
                     </div>
                 </div>
                 <div class="card card-side bg-base-100 shadow-xl flex-col self-auto w-40 px-4 sm:w-72 sm:flex-row">
-                    <figure><img src="img/no-profil.jpg" alt="Movie" class="w-24" /></figure>
-                    <div class="text-center mb-6 sm:flex sm:flex-col sm:justify-center sm:mb-0">
-                        <h2 class="text-sm font-semibold text-xl">Alvito Vilbert Manurung</h2>
+                    <figure><img src="img/RIYANI MAULIDANI.png" alt="Movie" class="sm:w-24" /></figure>
+                    <div
+                        class="text-center mb-6 mt-4 sm:flex sm:flex-col sm:justify-center sm:text-left sm:ml-4 sm:mt-0 sm:mb-0">
+                        <h2 class="text-sm font-semibold">Riani Maulidani</h2>
                         <p class="text-xs">Anggota PEMA</p>
                     </div>
                 </div>
                 <div class="card card-side bg-base-100 shadow-xl flex-col self-auto w-40 px-4 sm:w-72 sm:flex-row">
-                    <figure><img src="img/no-profil.jpg" alt="Movie" class="w-24" /></figure>
-                    <div class="text-center mb-6 sm:flex sm:flex-col sm:justify-center sm:mb-0">
-                        <h2 class="text-sm font-semibold text-xl">Riani Maulidani</h2>
+                    <figure><img src="img/TIYAR TAHIROTUN ANISAH.png" alt="Movie" class="sm:w-24" /></figure>
+                    <div
+                        class="text-center mb-6 mt-4 sm:flex sm:flex-col sm:justify-center sm:text-left sm:ml-4 sm:mt-0 sm:mb-0">
+                        <h2 class="text-sm font-semibold">Tiyar Tohirotun Anisah</h2>
                         <p class="text-xs">Anggota PEMA</p>
                     </div>
                 </div>
                 <div class="card card-side bg-base-100 shadow-xl flex-col self-auto w-40 px-4 sm:w-72 sm:flex-row">
-                    <figure><img src="img/no-profil.jpg" alt="Movie" class="w-24" /></figure>
-                    <div class="text-center mb-6 sm:flex sm:flex-col sm:justify-center sm:mb-0">
-                        <h2 class="text-sm font-semibold text-xl">Tiyar Tohirotun Anisah</h2>
-                        <p class="text-xs">Anggota PEMA</p>
-                    </div>
-                </div>
-                <div class="card card-side bg-base-100 shadow-xl flex-col self-auto w-40 px-4 sm:w-72 sm:flex-row">
-                    <figure><img src="img/no-profil.jpg" alt="Movie" class="w-24" /></figure>
-                    <div class="text-center mb-6 sm:flex sm:flex-col sm:justify-center sm:mb-0">
-                        <h2 class="text-sm font-semibold text-xl">Laila</h2>
+                    <figure><img src="img/LAILA.png" alt="Movie" class="sm:w-24" /></figure>
+                    <div
+                        class="text-center mb-6 mt-4 sm:flex sm:flex-col sm:justify-center sm:text-left sm:ml-4 sm:mt-0 sm:mb-0">
+                        <h2 class="text-sm font-semibold">Laila</h2>
                         <p class="text-xs">Anggota PEMA</p>
                     </div>
                 </div>
