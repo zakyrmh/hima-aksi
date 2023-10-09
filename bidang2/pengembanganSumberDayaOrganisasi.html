@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HIMA-AKSI</title>
-    <link href="css/style.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 
@@ -28,12 +28,26 @@
             <div x-show="open" @click.away="open = false">
                 <ul class="bg-base-100 absolute flex flex-col top-16 left-0 justify-center gap-4 w-full px-8 py-4">
                     <li>
-                        <a href="../index.html">Home</a>
+                        <a class="flex items-center font-semibold" href="../index.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-5 h-5 mr-2">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+                            </svg>
+                            Home
+                        </a>
                     </li>
                     <li x-data="{ open: false }">
                         <div class="flex items-center gap-2" @click="open = !open"
                             :aria-expanded="open ? 'true' : 'false'">
-                            <a href="../about.html">About</a>
+                            <a class="flex items-center font-semibold" href="../about.html">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-2">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
+                                </svg>
+                                About
+                            </a>
                             <button>
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                     stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
@@ -42,11 +56,11 @@
                                 </svg>
                             </button>
                         </div>
-                        <ul class="gap-4 ml-4" x-show="open" @click.away="open = false">
+                        <ul class="flex flex-col gap-3 ml-7 my-3" x-show="open" @click.away="open = false">
                             <li x-data="{ open: false }">
                                 <div class="flex items-center gap-2" @click="open = !open"
                                     :aria-expanded="open ? 'true' : 'false'">
-                                    <a href="../bidang1.html">Bidang 1</a>
+                                    <a class="font-semibold" href="../bidang3.html">Bidang 1</a>
                                     <button>
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                             stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
@@ -55,19 +69,19 @@
                                         </svg>
                                     </button>
                                 </div>
-                                <ul class="gap-4 ml-4" x-show="open" @click.away="open = false">
+                                <ul class="flex flex-col gap-4 ml-4 my-3" x-show="open" @click.away="open = false">
                                     <li>
-                                        <a href="../bidang1/pengajianAkuntansi.html">Pengajian Akuntansi</a>
+                                        <a class="font-semibold" href="../bidang1/pengajianAkuntansi.html">Pengajian Akuntansi</a>
                                     </li>
                                     <li>
-                                        <a href="../bidang1/kewirausahaan.html">Kewirausahaan</a>
+                                        <a class="font-semibold" href="../bidang1/kewirausahaan.html">Kewirausahaan</a>
                                     </li>
                                 </ul>
                             </li>
                             <li x-data="{ open: false }">
                                 <div class="flex items-center gap-2" @click="open = !open"
                                     :aria-expanded="open ? 'true' : 'false'">
-                                    <a href="../bidang2.html">Bidang 2</a>
+                                    <a class="font-semibold" href="bidang2.html">Bidang 2</a>
                                     <button>
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                             stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
@@ -76,20 +90,23 @@
                                         </svg>
                                     </button>
                                 </div>
-                                <ul class="gap-4 ml-4" x-show="open" @click.away="open = false">
+                                <ul class="flex flex-col gap-4 ml-4 my-3" x-show="open" @click.away="open = false">
                                     <li>
-                                        <a href="pengembanganSumberDayaOrganisasi.html">Pengembangan Sumber Daya
+                                        <a class="font-semibold"
+                                            href="pengembanganSumberDayaOrganisasi.html">Pengembangan Sumber
+                                            Daya
                                             Organisasi</a>
                                     </li>
                                     <li>
-                                        <a href="komunikasiDanInformasi.html">Komunikasi dan Informasi</a>
+                                        <a class="font-semibold" href="komunikasiDanInformasi.html">Komunikasi
+                                            dan Informasi</a>
                                     </li>
                                 </ul>
                             </li>
                             <li x-data="{ open: false }">
                                 <div class="flex items-center gap-2" @click="open = !open"
                                     :aria-expanded="open ? 'true' : 'false'">
-                                    <a href="../bidang3.html">Bidang 3</a>
+                                    <a class="font-semibold" href="../bidang3.html">Bidang 3</a>
                                     <button>
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                             stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
@@ -98,31 +115,39 @@
                                         </svg>
                                     </button>
                                 </div>
-                                <ul class="gap-4 ml-4" x-show="open" @click.away="open = false">
+                                <ul class="flex flex-col gap-4 ml-4 my-3" x-show="open" @click.away="open = false">
                                     <li>
-                                        <a href="../bidang3/minatDanBakat.html">Minat dan Bakat</a>
+                                        <a class="font-semibold" href="../bidang3/minatDanBakat.html">Minat dan Bakat</a>
                                     </li>
                                     <li>
-                                        <a href="../bidang3/penagbdianMasyarakat.html">Pengabdian Masyarakat</a>
+                                        <a class="font-semibold" href="../bidang3/penagbdianMasyarakat.html">Pengabdian
+                                            Masyarakat</a>
                                     </li>
                                 </ul>
                             </li>
                         </ul>
                     </li>
                     <li>
-                        <a href="../galery.html">Galery</a>
+                        <a class="flex items-center font-semibold" href="../galery.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-5 h-5 mr-2">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+                            </svg>
+                            Galery
+                        </a>
                     </li>
                 </ul>
             </div>
             <div class="hidden md:block">
                 <ul class="flex justify-center gap-4 w-full px-8 py-4">
                     <li>
-                        <a href="../index.html">Home</a>
+                        <a href="index.html">Home</a>
                     </li>
                     <li x-data="{ open: false }">
                         <div class="flex items-center gap-2" @click="open = !open"
                             :aria-expanded="open ? 'true' : 'false'">
-                            <a href="../about.html">About</a>
+                            <a href="about.html">About</a>
                             <button>
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                     stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
@@ -136,7 +161,7 @@
                             <li x-data="{ open: false }">
                                 <div class="flex items-center gap-2" @click="open = !open"
                                     :aria-expanded="open ? 'true' : 'false'">
-                                    <a href="../bidang1.html">Bidang 1</a>
+                                    <a href="bidang1.html">Bidang 1</a>
                                     <button>
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                             stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
@@ -147,17 +172,17 @@
                                 </div>
                                 <ul class="gap-4 ml-4" x-show="open" @click.away="open = false">
                                     <li>
-                                        <a href="../bidang1/pengajianAkuntansi.html">Pengajian Akuntansi</a>
+                                        <a href="bidang1/pengajianAkuntansi.html">Pengajian Akuntansi</a>
                                     </li>
                                     <li>
-                                        <a href="../bidang1/kewirausahaan.html">Kewirausahaan</a>
+                                        <a href="bidang1/kewirausahaan.html">Kewirausahaan</a>
                                     </li>
                                 </ul>
                             </li>
                             <li x-data="{ open: false }">
                                 <div class="flex items-center gap-2" @click="open = !open"
                                     :aria-expanded="open ? 'true' : 'false'">
-                                    <a href="../bidang2.html">Bidang 2</a>
+                                    <a href="bidang2.html">Bidang 2</a>
                                     <button>
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                             stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
@@ -168,18 +193,18 @@
                                 </div>
                                 <ul class="gap-4 ml-4" x-show="open" @click.away="open = false">
                                     <li>
-                                        <a href="pengembanganSumberDayaOrganisasi.html">Pengembangan Sumber Daya
+                                        <a href="bidang2/pengembanganSumberDayaOrganisasi.html">Pengembangan Sumber Daya
                                             Organisasi</a>
                                     </li>
                                     <li>
-                                        <a href="komunikasiDanInformasi.html">Komunikasi dan Informasi</a>
+                                        <a href="bidang2/komunikasiDanInformasi.html">Komunikasi dan Informasi</a>
                                     </li>
                                 </ul>
                             </li>
                             <li x-data="{ open: false }">
                                 <div class="flex items-center gap-2" @click="open = !open"
                                     :aria-expanded="open ? 'true' : 'false'">
-                                    <a href="../bidang3.html">Bidang 3</a>
+                                    <a href="bidang3.html">Bidang 3</a>
                                     <button>
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                             stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
@@ -190,28 +215,110 @@
                                 </div>
                                 <ul class="gap-4 ml-4" x-show="open" @click.away="open = false">
                                     <li>
-                                        <a href="../bidang3/minatDanBakat.html">Minat dan Bakat</a>
+                                        <a href="bidang3/minatDanBakat.html">Minat dan Bakat</a>
                                     </li>
                                     <li>
-                                        <a href="../bidang3/penagbdianMasyarakat.html">Pengabdian Masyarakat</a>
+                                        <a href="bidang3/penagbdianMasyarakat.html">Pengabdian Masyarakat</a>
                                     </li>
                                 </ul>
                             </li>
                         </ul>
                     </li>
                     <li>
-                        <a href="../galery.html">Galery</a>
+                        <a href="galery.html">Galery</a>
                     </li>
                 </ul>
             </div>
         </div>
     </header>
     <main class="mx-4 sm:mx-6 md:mx-12 lg:mx-20">
-        <h1 class="text-center text-2xl font-bold mt-20">Proses Development</h1>
+        <section class="md:mx-10">
+            <img src="../img/background3.png" alt=""
+                class="absolute top-0 left-0 w-full h-screen object-cover object-center -z-50">
+            <div class="relative content-center grid h-screen mx-4 text-center text-white">
+                <h3 class="text-2xl font-medium">HIMA-AKSI</h3>
+                <h1 class="text-3xl font-bold mb-40">PENGEMBANGAN SUMBER DAYA ORGANISASI</b></h1>
+            </div>
+        </section>
+        <div class="lg:flex lg:gap-6 lg:justify-center">
+            <!-- Keanggotaan -->
+            <section class="mt-16">
+                <div class="flex gap-4 justify-center mb-4">
+                    <div class="card card-side bg-base-100 shadow-xl flex-col w-40 px-4 sm:w-72 sm:flex-row">
+                        <figure><img src="../img/Farah Nur Aulia.png" alt="Movie" class="sm:w-24" /></figure>
+                        <div
+                            class="text-center mb-6 mt-4 sm:flex sm:flex-col sm:justify-center sm:text-left sm:ml-4 sm:mt-0 sm:mb-0">
+                            <h2 class="text-sm font-semibold">Farah Nur Aulia</h2>
+                            <p class="text-xs">Kepala Divisi PSDO</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid gap-4 grid-cols-2 justify-items-center justify-center items-stretch mb-4">
+                    <div class="card card-side bg-base-100 shadow-xl flex-col self-auto w-40 px-4 sm:w-72 sm:flex-row">
+                        <figure><img src="../img/Faizal Febrian.png" alt="Movie" class="sm:w-24" /></figure>
+                        <div
+                            class="text-center mb-6 mt-4 sm:flex sm:flex-col sm:justify-center sm:text-left sm:ml-4 sm:mt-0 sm:mb-0">
+                            <h2 class="text-sm font-semibold">Faizal Febrian</h2>
+                            <p class="text-xs">Anggota PSDO</p>
+                        </div>
+                    </div>
+                    <div class="card card-side bg-base-100 shadow-xl flex-col self-auto w-40 px-4 sm:w-72 sm:flex-row">
+                        <figure><img src="../img/M. Dimas Abdilla.png" alt="Movie" class="sm:w-24" /></figure>
+                        <div
+                            class="text-center mb-6 mt-4 sm:flex sm:flex-col sm:justify-center sm:text-left sm:ml-4 sm:mt-0 sm:mb-0">
+                            <h2 class="text-sm font-semibold">M. Dimas Abdilla P.</h2>
+                            <p class="text-xs">Anggota PSDO</p>
+                        </div>
+                    </div>
+                    <div class="card card-side bg-base-100 shadow-xl flex-col self-auto w-40 px-4 sm:w-72 sm:flex-row">
+                        <figure><img src="../img/Sandrina Claudya.png" alt="Movie" class="sm:w-24" /></figure>
+                        <div
+                            class="text-center mb-6 mt-4 sm:flex sm:flex-col sm:justify-center sm:text-left sm:ml-4 sm:mt-0 sm:mb-0">
+                            <h2 class="text-sm font-semibold">Sandrina Claudya</h2>
+                            <p class="text-xs">Anggota PSDO</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Deskripsi -->
+            <section class="mt-16 flex flex-col gap-4 items-center justify-center md:flex-row md:items-start">
+                <div class="card w-96 bg-base-100 shadow-xl p-4">
+                    <p class="text-justify text-sm">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore
+                        rerum nesciunt laborum autem suscipit explicabo pariatur possimus perferendis odio voluptatibus
+                        blanditiis illum, placeat saepe sunt hic praesentium dolores aperiam est ipsum sed? Labore odio vel
+                        eius consequatur possimus blanditiis obcaecati fugit tempora sapiente, placeat, harum doloribus vero
+                        doloremque. Nam voluptate similique qui illum maiores quod, tenetur, deserunt omnis sit, iusto
+                        voluptates rerum perferendis natus laudantium tempore quas magnam dignissimos optio adipisci officia
+                        nemo nisi. Rerum, expedita aliquid veniam illo recusandae a? Expedita explicabo quis ducimus dolorum
+                        error voluptatum consectetur reprehenderit incidunt quaerat itaque beatae provident, non tempora
+                        aperiam iure quos!</p>
+                </div>
+            </section>
+        </div>
+        <!-- Tugas dan Wewenang -->
+        <section class="mt-16">
+            <h2 class="text-center text-3xl font-semibold text-gray-900 mb-6">Tugas dan Wewenang</h2>
+            <section class="flex flex-col gap-4 items-center justify-center md:flex-row md:items-start">
+                <div class="card w-96 bg-base-100 shadow-xl p-4">
+                    <ol class="text-justify text-sm list-decimal ml-4">
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, ab cum! Minima, praesentium.
+                            Illo rerum animi veniam iure repudiandae optio.</li>
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, ab cum! Minima, praesentium.
+                            Illo rerum animi veniam iure repudiandae optio.</li>
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, ab cum! Minima, praesentium.
+                            Illo rerum animi veniam iure repudiandae optio.</li>
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, ab cum! Minima, praesentium.
+                            Illo rerum animi veniam iure repudiandae optio.</li>
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, ab cum! Minima, praesentium.
+                            Illo rerum animi veniam iure repudiandae optio.</li>
+                    </ol>
+                </div>
+            </section>
+        </section>
     </main>
-    <footer class="absolute footer p-10 bg-neutral text-neutral-content mt-12 w-full bottom-0">
+    <footer class="footer p-10 bg-neutral text-neutral-content mt-12">
         <aside>
-            <img src="img/logo.png" alt="" class="w-12 h-12">
+            <img src="../img/logo.png" alt="" class="w-12 h-12">
             <p class="text-sm">HIMA-AKSI<br />Himpunan Mahasiswa Prodi Akuntansi Universitas Singaperbangsa Karawang</p>
         </aside>
         <nav>
