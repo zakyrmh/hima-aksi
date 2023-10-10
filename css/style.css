@@ -1346,6 +1346,11 @@ html {
   margin-bottom: 0.75rem;
 }
 
+.my-8 {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
 .mb-10 {
   margin-bottom: 2.5rem;
 }
@@ -1445,6 +1450,10 @@ html {
   height: 4rem;
 }
 
+.h-20 {
+  height: 5rem;
+}
+
 .h-4 {
   height: 1rem;
 }
@@ -1475,6 +1484,10 @@ html {
 
 .w-12 {
   width: 3rem;
+}
+
+.w-20 {
+  width: 5rem;
 }
 
 .w-32 {
@@ -1770,6 +1783,15 @@ html {
     justify-content: center;
   }
 
+  .sm\:px-0 {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  .sm\:pr-4 {
+    padding-right: 1rem;
+  }
+
   .sm\:text-left {
     text-align: left;
   }
@@ -1786,8 +1808,8 @@ html {
     margin-right: 3rem;
   }
 
-  .md\:mb-8 {
-    margin-bottom: 2rem;
+  .md\:mb-6 {
+    margin-bottom: 1.5rem;
   }
 
   .md\:block {
@@ -1796,6 +1818,18 @@ html {
 
   .md\:hidden {
     display: none;
+  }
+
+  .md\:h-32 {
+    height: 8rem;
+  }
+
+  .md\:w-1\/2 {
+    width: 50%;
+  }
+
+  .md\:w-32 {
+    width: 8rem;
   }
 
   .md\:max-w-3xl {
@@ -1812,6 +1846,10 @@ html {
 
   .md\:items-stretch {
     align-items: stretch;
+  }
+
+  .md\:justify-center {
+    justify-content: center;
   }
 
   .md\:gap-6 {

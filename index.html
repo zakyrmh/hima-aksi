@@ -172,12 +172,12 @@
                                 </svg>
                             </button>
                         </div>
-                        <ul class="gap-4 p-4 absolute mt-5 w-40 rounded-md bg-white shadow-md" x-show="open"
-                            @click.away="open = false">
+                        <ul class="flex flex-col gap-4 p-4 absolute mt-5 rounded-md bg-white shadow-md w-60"
+                            x-show="open" @click.away="open = false">
                             <li x-data="{ open: false }">
                                 <div class="flex items-center gap-2" @click="open = !open"
                                     :aria-expanded="open ? 'true' : 'false'">
-                                    <a href="bidang1.html">Bidang 1</a>
+                                    <a class="font-semibold" href="bidang1.html">Bidang 1</a>
                                     <button>
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                             stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
@@ -186,19 +186,20 @@
                                         </svg>
                                     </button>
                                 </div>
-                                <ul class="gap-4 ml-4" x-show="open" @click.away="open = false">
+                                <ul class="flex flex-col gap-4 py-4 ml-4" x-show="open" @click.away="open = false">
                                     <li>
-                                        <a href="bidang1/pengajianAkuntansi.html">Pengajian Akuntansi</a>
+                                        <a class="font-semibold" href="bidang1/pengajianAkuntansi.html">Pengajian
+                                            Akuntansi</a>
                                     </li>
                                     <li>
-                                        <a href="bidang1/kewirausahaan.html">Kewirausahaan</a>
+                                        <a class="font-semibold" href="bidang1/kewirausahaan.html">Kewirausahaan</a>
                                     </li>
                                 </ul>
                             </li>
                             <li x-data="{ open: false }">
                                 <div class="flex items-center gap-2" @click="open = !open"
                                     :aria-expanded="open ? 'true' : 'false'">
-                                    <a href="bidang2.html">Bidang 2</a>
+                                    <a class="font-semibold" href="bidang2.html">Bidang 2</a>
                                     <button>
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                             stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
@@ -207,20 +208,23 @@
                                         </svg>
                                     </button>
                                 </div>
-                                <ul class="gap-4 ml-4" x-show="open" @click.away="open = false">
+                                <ul class="flex flex-col gap-4 py-4 ml-4" x-show="open" @click.away="open = false">
                                     <li>
-                                        <a href="bidang2/pengembanganSumberDayaOrganisasi.html">Pengembangan Sumber Daya
+                                        <a class="font-semibold"
+                                            href="bidang2/pengembanganSumberDayaOrganisasi.html">Pengembangan Sumber
+                                            Daya
                                             Organisasi</a>
                                     </li>
                                     <li>
-                                        <a href="bidang2/komunikasiDanInformasi.html">Komunikasi dan Informasi</a>
+                                        <a class="font-semibold" href="bidang2/komunikasiDanInformasi.html">Komunikasi
+                                            dan Informasi</a>
                                     </li>
                                 </ul>
                             </li>
                             <li x-data="{ open: false }">
                                 <div class="flex items-center gap-2" @click="open = !open"
                                     :aria-expanded="open ? 'true' : 'false'">
-                                    <a href="bidang3.html">Bidang 3</a>
+                                    <a class="font-semibold" href="bidang3.html">Bidang 3</a>
                                     <button>
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                             stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
@@ -229,12 +233,13 @@
                                         </svg>
                                     </button>
                                 </div>
-                                <ul class="gap-4 ml-4" x-show="open" @click.away="open = false">
+                                <ul class="flex flex-col gap-4 py-4 ml-4" x-show="open" @click.away="open = false">
                                     <li>
-                                        <a href="bidang3/minatDanBakat.html">Minat dan Bakat</a>
+                                        <a class="font-semibold" href="bidang3/minatDanBakat.html">Minat dan Bakat</a>
                                     </li>
                                     <li>
-                                        <a href="bidang3/penagbdianMasyarakat.html">Pengabdian Masyarakat</a>
+                                        <a class="font-semibold" href="bidang3/penagbdianMasyarakat.html">Pengabdian
+                                            Masyarakat</a>
                                     </li>
                                 </ul>
                             </li>
@@ -343,20 +348,23 @@
             <div class="relative content-center grid h-[35rem] mx-4 mt-6">
                 <div class="mb-10 text-center text-white">
                     <h4 class="text-xl font-medium">#Kabinet</h3>
-                        <h3 class="text-2xl font-bold mb-4 md:mb-8">YOGASWARA ABHIPRAYA</b></h1>
-                            <div class="text-sm text-justify md:mx-10 lg:mx-16 xl:mx-28">
-                                <p class="mb-2">Kabinet Yogaswara Abhipraya (satu suara untuk mencapai cita), nama
-                                    kabinet ini diambil dari
-                                    dua kata dalam bahasa sansekerta yaitu "yogaswara" yang artinya (suara untuk
-                                    bersatu) dan
-                                    "Abipraya" artinya (cita cita /harapan).</p>
-                                <p>Dalam artian kabinet yogaswara Abipraya ini mengartikan di dalam sebuah organisasi
-                                    itu
-                                    terdiri dari berbagai macam kepala yang artinya juga bermacam macam pemikiran, tapi
-                                    bagaimana kita bisa menyatukan pemikiran tersebut menjadi satu suara, satu tujuan
-                                    dan satu
-                                    tindakan, untuk menggapai sebuah harapan atau cita cita dalam organisasi.</p>
-                            </div>
+                    <h3 class="text-2xl font-bold md:mb-6">YOGASWARA ABHIPRAYA</b></h3>
+                    <div class="flex flex-col items-center md:flex-row md:justify-center">
+                        <img class="w-20 h-20 my-8 md:w-32 md:h-32" src="img/Official Logo.png" alt="">
+                        <div class="text-sm text-justify md:mx-10 md:w-1/2 lg:mx-16 xl:mx-28">
+                            <p class="mb-2">Kabinet Yogaswara Abhipraya (satu suara untuk mencapai cita), nama
+                                kabinet ini diambil dari
+                                dua kata dalam bahasa sansekerta yaitu "yogaswara" yang artinya (suara untuk
+                                bersatu) dan
+                                "Abipraya" artinya (cita cita /harapan).</p>
+                            <p>Dalam artian kabinet yogaswara Abipraya ini mengartikan di dalam sebuah organisasi
+                                itu
+                                terdiri dari berbagai macam kepala yang artinya juga bermacam macam pemikiran, tapi
+                                bagaimana kita bisa menyatukan pemikiran tersebut menjadi satu suara, satu tujuan
+                                dan satu
+                                tindakan, untuk menggapai sebuah harapan atau cita cita dalam organisasi.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -409,7 +417,8 @@
         <section class="mt-16">
             <h2 class="text-center text-3xl font-semibold text-gray-900 mb-6">Struktur HIMA-AKSI</h2>
             <div class="flex gap-4 justify-center mb-4">
-                <div class="card card-side bg-base-100 shadow-xl flex-col w-40 px-4 sm:w-72 sm:flex-row">
+                <div
+                    class="card card-side bg-base-100 shadow-xl flex-col w-40 px-4 sm:w-72 sm:flex-row sm:px-0 sm:pr-4">
                     <figure><img src="img/M. A. Dian Nugraha.png" alt="Movie" class="sm:w-24" /></figure>
                     <div
                         class="text-center mb-6 mt-4 sm:flex sm:flex-col sm:justify-center sm:text-left sm:ml-4 sm:mt-0 sm:mb-0">
@@ -417,7 +426,8 @@
                         <p class="text-sm">Ketua HIMA-AKSI</p>
                     </div>
                 </div>
-                <div class="card card-side bg-base-100 shadow-xl flex-col w-40 px-4 sm:w-72 sm:flex-row">
+                <div
+                    class="card card-side bg-base-100 shadow-xl flex-col w-40 px-4 sm:w-72 sm:flex-row sm:px-0 sm:pr-4">
                     <figure><img src="img/Az-Zubair Ainur R..png" alt="Movie" class="sm:w-24" /></figure>
                     <div
                         class="text-center mb-6 mt-4 sm:flex sm:flex-col sm:justify-center sm:text-left sm:ml-4 sm:mt-0 sm:mb-0">
@@ -427,7 +437,8 @@
                 </div>
             </div>
             <div class="flex gap-4 justify-center mb-4">
-                <div class="card card-side bg-base-100 shadow-xl flex-col w-40 px-4 sm:w-72 sm:flex-row">
+                <div
+                    class="card card-side bg-base-100 shadow-xl flex-col w-40 px-4 sm:w-72 sm:flex-row sm:px-0 sm:pr-4">
                     <figure><img src="img/Gita Hartawan.png" alt="Movie" class="sm:w-24" /></figure>
                     <div
                         class="text-center mb-6 mt-4 sm:flex sm:flex-col sm:justify-center sm:text-left sm:ml-4 sm:mt-0 sm:mb-0">
@@ -435,7 +446,8 @@
                         <p class="text-xs">Sekretaris HIMA-AKSI</p>
                     </div>
                 </div>
-                <div class="card card-side bg-base-100 shadow-xl flex-col w-40 px-4 sm:w-72 sm:flex-row">
+                <div
+                    class="card card-side bg-base-100 shadow-xl flex-col w-40 px-4 sm:w-72 sm:flex-row sm:px-0 sm:pr-4">
                     <figure><img src="img/Siti Nurul Hijayanti.png" alt="Movie" class="sm:w-24" /></figure>
                     <div
                         class="text-center mb-6 mt-4 sm:flex sm:flex-col sm:justify-center sm:text-left sm:ml-4 sm:mt-0 sm:mb-0">
@@ -446,7 +458,8 @@
             </div>
             <h3 class="text-center text-2xl font-semibold text-gray-900 mt-10 mb-4">Bidang 1</h3>
             <div class="flex gap-4 justify-center mb-4">
-                <div class="card card-side bg-base-100 shadow-xl flex-col w-40 px-4 sm:w-72 sm:flex-row">
+                <div
+                    class="card card-side bg-base-100 shadow-xl flex-col w-40 px-4 sm:w-72 sm:flex-row sm:px-0 sm:pr-4">
                     <figure><img src="img/Nadya Zhulfania.png" alt="Movie" class="sm:w-24" /></figure>
                     <div
                         class="text-center mb-6 mt-4 sm:flex sm:flex-col sm:justify-center sm:text-left sm:ml-4 sm:mt-0 sm:mb-0">
@@ -456,7 +469,8 @@
                 </div>
             </div>
             <div class="flex gap-4 justify-center mb-4">
-                <div class="card card-side bg-base-100 shadow-xl flex-col w-40 px-4 sm:w-72 sm:flex-row">
+                <div
+                    class="card card-side bg-base-100 shadow-xl flex-col w-40 px-4 sm:w-72 sm:flex-row sm:px-0 sm:pr-4">
                     <figure><img src="img/Eby Khoirunnisa S..png" alt="Movie" class="sm:w-24" /></figure>
                     <div
                         class="text-center mb-6 mt-4 sm:flex sm:flex-col sm:justify-center sm:text-left sm:ml-4 sm:mt-0 sm:mb-0">
@@ -464,7 +478,8 @@
                         <p class="text-xs">Litbang Bidang 1</p>
                     </div>
                 </div>
-                <div class="card card-side bg-base-100 shadow-xl flex-col w-40 px-4 sm:w-72 sm:flex-row">
+                <div
+                    class="card card-side bg-base-100 shadow-xl flex-col w-40 px-4 sm:w-72 sm:flex-row sm:px-0 sm:pr-4">
                     <figure><img src="img/Naila Rachma D..png" alt="Movie" class="sm:w-24" /></figure>
                     <div
                         class="text-center mb-6 mt-4 sm:flex sm:flex-col sm:justify-center sm:text-left sm:ml-4 sm:mt-0 sm:mb-0">
@@ -475,7 +490,8 @@
             </div>
             <h3 class="text-center text-2xl font-semibold text-gray-900 mt-10 mb-4">Pengajian Akuntansi</h3>
             <div class="flex gap-4 justify-center mb-4">
-                <div class="card card-side bg-base-100 shadow-xl flex-col w-40 px-4 sm:w-72 sm:flex-row">
+                <div
+                    class="card card-side bg-base-100 shadow-xl flex-col w-40 px-4 sm:w-72 sm:flex-row sm:px-0 sm:pr-4">
                     <figure><img src="img/Bintang Ramadhan.png" alt="Movie" class="sm:w-24" /></figure>
                     <div
                         class="text-center mb-6 mt-4 sm:flex sm:flex-col sm:justify-center sm:text-left sm:ml-4 sm:mt-0 sm:mb-0">
@@ -485,7 +501,8 @@
                 </div>
             </div>
             <div class="grid gap-4 grid-cols-2 justify-items-center justify-center items-stretch mb-4">
-                <div class="card card-side bg-base-100 shadow-xl flex-col self-auto w-40 px-4 sm:w-72 sm:flex-row">
+                <div
+                    class="card card-side bg-base-100 shadow-xl flex-col self-auto w-40 px-4 sm:w-72 sm:flex-row sm:px-0 sm:pr-4">
                     <figure><img src="img/Jona Amsal Gultom.png" alt="Movie" class="sm:w-24" /></figure>
                     <div
                         class="text-center mb-6 mt-4 sm:flex sm:flex-col sm:justify-center sm:text-left sm:ml-4 sm:mt-0 sm:mb-0">
@@ -493,7 +510,8 @@
                         <p class="text-xs">Anggota Divisi Pengajian Akuntansi</p>
                     </div>
                 </div>
-                <div class="card card-side bg-base-100 shadow-xl flex-col self-auto w-40 px-4 sm:w-72 sm:flex-row">
+                <div
+                    class="card card-side bg-base-100 shadow-xl flex-col self-auto w-40 px-4 sm:w-72 sm:flex-row sm:px-0 sm:pr-4">
                     <figure><img src="img/Naila Nura'ini.png" alt="Movie" class="sm:w-24" /></figure>
                     <div
                         class="text-center mb-6 mt-4 sm:flex sm:flex-col sm:justify-center sm:text-left sm:ml-4 sm:mt-0 sm:mb-0">
@@ -501,7 +519,8 @@
                         <p class="text-xs">Anggota Divisi Pengajian Akuntansi</p>
                     </div>
                 </div>
-                <div class="card card-side bg-base-100 shadow-xl flex-col self-auto w-40 px-4 sm:w-72 sm:flex-row">
+                <div
+                    class="card card-side bg-base-100 shadow-xl flex-col self-auto w-40 px-4 sm:w-72 sm:flex-row sm:px-0 sm:pr-4">
                     <figure><img src="img/Polinda.png" alt="Movie" class="sm:w-24" /></figure>
                     <div
                         class="text-center mb-6 mt-4 sm:flex sm:flex-col sm:justify-center sm:text-left sm:ml-4 sm:mt-0 sm:mb-0">
@@ -509,7 +528,8 @@
                         <p class="text-xs">Anggota Divisi Pengajian Akuntansi</p>
                     </div>
                 </div>
-                <div class="card card-side bg-base-100 shadow-xl flex-col self-auto w-40 px-4 sm:w-72 sm:flex-row">
+                <div
+                    class="card card-side bg-base-100 shadow-xl flex-col self-auto w-40 px-4 sm:w-72 sm:flex-row sm:px-0 sm:pr-4">
                     <figure><img src="img/Silviana Futri Cantika.png" alt="Movie" class="sm:w-24" /></figure>
                     <div
                         class="text-center mb-6 mt-4 sm:flex sm:flex-col sm:justify-center sm:text-left sm:ml-4 sm:mt-0 sm:mb-0">
@@ -520,7 +540,8 @@
             </div>
             <h3 class="text-center text-2xl font-semibold text-gray-900 mt-10 mb-4">Devisi Kewirausahaan</h3>
             <div class="flex gap-4 justify-center mb-4">
-                <div class="card card-side bg-base-100 shadow-xl flex-col w-40 px-4 sm:w-72 sm:flex-row">
+                <div
+                    class="card card-side bg-base-100 shadow-xl flex-col w-40 px-4 sm:w-72 sm:flex-row sm:px-0 sm:pr-4">
                     <figure><img src="img/Nadya Putri.png" alt="Movie" class="sm:w-24" /></figure>
                     <div
                         class="text-center mb-6 mt-4 sm:flex sm:flex-col sm:justify-center sm:text-left sm:ml-4 sm:mt-0 sm:mb-0">
@@ -530,7 +551,8 @@
                 </div>
             </div>
             <div class="grid gap-4 grid-cols-2 justify-items-center justify-center items-stretch mb-4">
-                <div class="card card-side bg-base-100 shadow-xl flex-col self-auto w-40 px-4 sm:w-72 sm:flex-row">
+                <div
+                    class="card card-side bg-base-100 shadow-xl flex-col self-auto w-40 px-4 sm:w-72 sm:flex-row sm:px-0 sm:pr-4">
                     <figure><img src="img/Fera Ferdianty.png" alt="Movie" class="sm:w-24" /></figure>
                     <div
                         class="text-center mb-6 mt-4 sm:flex sm:flex-col sm:justify-center sm:text-left sm:ml-4 sm:mt-0 sm:mb-0">
@@ -538,7 +560,8 @@
                         <p class="text-xs">Anggota Divisi Kewirausahaan</p>
                     </div>
                 </div>
-                <div class="card card-side bg-base-100 shadow-xl flex-col self-auto w-40 px-4 sm:w-72 sm:flex-row">
+                <div
+                    class="card card-side bg-base-100 shadow-xl flex-col self-auto w-40 px-4 sm:w-72 sm:flex-row sm:px-0 sm:pr-4">
                     <figure><img src="img/Kayla Faritza Hani.png" alt="Movie" class="sm:w-24" /></figure>
                     <div
                         class="text-center mb-6 mt-4 sm:flex sm:flex-col sm:justify-center sm:text-left sm:ml-4 sm:mt-0 sm:mb-0">
@@ -546,7 +569,8 @@
                         <p class="text-xs">Anggota Divisi Kewirausahaan</p>
                     </div>
                 </div>
-                <div class="card card-side bg-base-100 shadow-xl flex-col self-auto w-40 px-4 sm:w-72 sm:flex-row">
+                <div
+                    class="card card-side bg-base-100 shadow-xl flex-col self-auto w-40 px-4 sm:w-72 sm:flex-row sm:px-0 sm:pr-4">
                     <figure><img src="img/Kylla Sumarna.png" alt="Movie" class="sm:w-24" /></figure>
                     <div
                         class="text-center mb-6 mt-4 sm:flex sm:flex-col sm:justify-center sm:text-left sm:ml-4 sm:mt-0 sm:mb-0">
@@ -554,7 +578,8 @@
                         <p class="text-xs">Anggota Divisi Kewirausahaan</p>
                     </div>
                 </div>
-                <div class="card card-side bg-base-100 shadow-xl flex-col self-auto w-40 px-4 sm:w-72 sm:flex-row">
+                <div
+                    class="card card-side bg-base-100 shadow-xl flex-col self-auto w-40 px-4 sm:w-72 sm:flex-row sm:px-0 sm:pr-4">
                     <figure><img src="img/Ragel Mar The Nus.png" alt="Movie" class="sm:w-24" /></figure>
                     <div
                         class="text-center mb-6 mt-4 sm:flex sm:flex-col sm:justify-center sm:text-left sm:ml-4 sm:mt-0 sm:mb-0">
@@ -565,7 +590,8 @@
             </div>
             <h3 class="text-center text-2xl font-semibold text-gray-900 mt-10 mb-4">Bidang 2</h3>
             <div class="flex gap-4 justify-center mb-4">
-                <div class="card card-side bg-base-100 shadow-xl flex-col w-40 px-4 sm:w-72 sm:flex-row">
+                <div
+                    class="card card-side bg-base-100 shadow-xl flex-col w-40 px-4 sm:w-72 sm:flex-row sm:px-0 sm:pr-4">
                     <figure><img src="img/Haikal Farrel A..png" alt="Movie" class="sm:w-24" /></figure>
                     <div
                         class="text-center mb-6 mt-4 sm:flex sm:flex-col sm:justify-center sm:text-left sm:ml-4 sm:mt-0 sm:mb-0">
@@ -575,7 +601,8 @@
                 </div>
             </div>
             <div class="grid gap-4 grid-cols-2 justify-items-center justify-center items-stretch mb-4">
-                <div class="card card-side bg-base-100 shadow-xl flex-col self-auto w-40 px-4 sm:w-72 sm:flex-row">
+                <div
+                    class="card card-side bg-base-100 shadow-xl flex-col self-auto w-40 px-4 sm:w-72 sm:flex-row sm:px-0 sm:pr-4">
                     <figure><img src="img/Rheyna Anas Tiara.png" alt="Movie" class="sm:w-24" /></figure>
                     <div
                         class="text-center mb-6 mt-4 sm:flex sm:flex-col sm:justify-center sm:text-left sm:ml-4 sm:mt-0 sm:mb-0">
@@ -583,7 +610,8 @@
                         <p class="text-xs">Litbang Bidang 2</p>
                     </div>
                 </div>
-                <div class="card card-side bg-base-100 shadow-xl flex-col self-auto w-40 px-4 sm:w-72 sm:flex-row">
+                <div
+                    class="card card-side bg-base-100 shadow-xl flex-col self-auto w-40 px-4 sm:w-72 sm:flex-row sm:px-0 sm:pr-4">
                     <figure><img src="img/Shalwa Yuana Putri.png" alt="Movie" class="sm:w-24" /></figure>
                     <div
                         class="text-center mb-6 mt-4 sm:flex sm:flex-col sm:justify-center sm:text-left sm:ml-4 sm:mt-0 sm:mb-0">
@@ -594,7 +622,8 @@
             </div>
             <h3 class="text-center text-2xl font-semibold text-gray-900 mt-10 mb-4">Divisi Komunikasi dan Informasi</h3>
             <div class="flex gap-4 justify-center mb-4">
-                <div class="card card-side bg-base-100 shadow-xl flex-col w-40 px-4 sm:w-72 sm:flex-row">
+                <div
+                    class="card card-side bg-base-100 shadow-xl flex-col w-40 px-4 sm:w-72 sm:flex-row sm:px-0 sm:pr-4">
                     <figure><img src="img/Dauzanda Irlando.png" alt="Movie" class="sm:w-24" /></figure>
                     <div
                         class="text-center mb-6 mt-4 sm:flex sm:flex-col sm:justify-center sm:text-left sm:ml-4 sm:mt-0 sm:mb-0">
@@ -604,7 +633,8 @@
                 </div>
             </div>
             <div class="grid gap-4 grid-cols-2 justify-items-center justify-center items-stretch mb-4">
-                <div class="card card-side bg-base-100 shadow-xl flex-col self-auto w-40 px-4 sm:w-72 sm:flex-row">
+                <div
+                    class="card card-side bg-base-100 shadow-xl flex-col self-auto w-40 px-4 sm:w-72 sm:flex-row sm:px-0 sm:pr-4">
                     <figure><img src="img/Alfina Dwi Safitri.png" alt="Movie" class="sm:w-24" /></figure>
                     <div
                         class="text-center mb-6 mt-4 sm:flex sm:flex-col sm:justify-center sm:text-left sm:ml-4 sm:mt-0 sm:mb-0">
@@ -612,7 +642,8 @@
                         <p class="text-xs">Anggota Kominfo</p>
                     </div>
                 </div>
-                <div class="card card-side bg-base-100 shadow-xl flex-col self-auto w-40 px-4 sm:w-72 sm:flex-row">
+                <div
+                    class="card card-side bg-base-100 shadow-xl flex-col self-auto w-40 px-4 sm:w-72 sm:flex-row sm:px-0 sm:pr-4">
                     <figure><img src="img/M. Diky F.png" alt="Movie" class="sm:w-24" /></figure>
                     <div
                         class="text-center mb-6 mt-4 sm:flex sm:flex-col sm:justify-center sm:text-left sm:ml-4 sm:mt-0 sm:mb-0">
@@ -620,7 +651,8 @@
                         <p class="text-xs">Anggota Kominfo</p>
                     </div>
                 </div>
-                <div class="card card-side bg-base-100 shadow-xl flex-col self-auto w-40 px-4 sm:w-72 sm:flex-row">
+                <div
+                    class="card card-side bg-base-100 shadow-xl flex-col self-auto w-40 px-4 sm:w-72 sm:flex-row sm:px-0 sm:pr-4">
                     <figure><img src="img/Syifa Aulia F.png" alt="Movie" class="sm:w-24" /></figure>
                     <div
                         class="text-center mb-6 mt-4 sm:flex sm:flex-col sm:justify-center sm:text-left sm:ml-4 sm:mt-0 sm:mb-0">
@@ -628,7 +660,8 @@
                         <p class="text-xs">Anggota Kominfo</p>
                     </div>
                 </div>
-                <div class="card card-side bg-base-100 shadow-xl flex-col self-auto w-40 px-4 sm:w-72 sm:flex-row">
+                <div
+                    class="card card-side bg-base-100 shadow-xl flex-col self-auto w-40 px-4 sm:w-72 sm:flex-row sm:px-0 sm:pr-4">
                     <figure><img src="img/AMALIA MABRUROH.png" alt="Movie" class="sm:w-24" /></figure>
                     <div
                         class="text-center mb-6 mt-4 sm:flex sm:flex-col sm:justify-center sm:text-left sm:ml-4 sm:mt-0 sm:mb-0">
@@ -640,7 +673,8 @@
             <h3 class="text-center text-2xl font-semibold text-gray-900 mt-10 mb-4">Divisi Pengembangan Sumber Daya
                 Organisasi</h3>
             <div class="flex gap-4 justify-center mb-4">
-                <div class="card card-side bg-base-100 shadow-xl flex-col w-40 px-4 sm:w-72 sm:flex-row">
+                <div
+                    class="card card-side bg-base-100 shadow-xl flex-col w-40 px-4 sm:w-72 sm:flex-row sm:px-0 sm:pr-4">
                     <figure><img src="img/Farah Nur Aulia.png" alt="Movie" class="sm:w-24" /></figure>
                     <div
                         class="text-center mb-6 mt-4 sm:flex sm:flex-col sm:justify-center sm:text-left sm:ml-4 sm:mt-0 sm:mb-0">
@@ -650,7 +684,8 @@
                 </div>
             </div>
             <div class="grid gap-4 grid-cols-2 justify-items-center justify-center items-stretch mb-4">
-                <div class="card card-side bg-base-100 shadow-xl flex-col self-auto w-40 px-4 sm:w-72 sm:flex-row">
+                <div
+                    class="card card-side bg-base-100 shadow-xl flex-col self-auto w-40 px-4 sm:w-72 sm:flex-row sm:px-0 sm:pr-4">
                     <figure><img src="img/Faizal Febrian.png" alt="Movie" class="sm:w-24" /></figure>
                     <div
                         class="text-center mb-6 mt-4 sm:flex sm:flex-col sm:justify-center sm:text-left sm:ml-4 sm:mt-0 sm:mb-0">
@@ -658,7 +693,8 @@
                         <p class="text-xs">Anggota PSDO</p>
                     </div>
                 </div>
-                <div class="card card-side bg-base-100 shadow-xl flex-col self-auto w-40 px-4 sm:w-72 sm:flex-row">
+                <div
+                    class="card card-side bg-base-100 shadow-xl flex-col self-auto w-40 px-4 sm:w-72 sm:flex-row sm:px-0 sm:pr-4">
                     <figure><img src="img/M. Dimas Abdilla.png" alt="Movie" class="sm:w-24" /></figure>
                     <div
                         class="text-center mb-6 mt-4 sm:flex sm:flex-col sm:justify-center sm:text-left sm:ml-4 sm:mt-0 sm:mb-0">
@@ -666,7 +702,8 @@
                         <p class="text-xs">Anggota PSDO</p>
                     </div>
                 </div>
-                <div class="card card-side bg-base-100 shadow-xl flex-col self-auto w-40 px-4 sm:w-72 sm:flex-row">
+                <div
+                    class="card card-side bg-base-100 shadow-xl flex-col self-auto w-40 px-4 sm:w-72 sm:flex-row sm:px-0 sm:pr-4">
                     <figure><img src="img/Sandrina Claudya.png" alt="Movie" class="sm:w-24" /></figure>
                     <div
                         class="text-center mb-6 mt-4 sm:flex sm:flex-col sm:justify-center sm:text-left sm:ml-4 sm:mt-0 sm:mb-0">
@@ -677,7 +714,8 @@
             </div>
             <h3 class="text-center text-2xl font-semibold text-gray-900 mt-10 mb-4">Bidang 3</h3>
             <div class="flex gap-4 justify-center mb-4">
-                <div class="card card-side bg-base-100 shadow-xl flex-col w-40 px-4 sm:w-72 sm:flex-row">
+                <div
+                    class="card card-side bg-base-100 shadow-xl flex-col w-40 px-4 sm:w-72 sm:flex-row sm:px-0 sm:pr-4">
                     <figure><img src="img/Magdalena Uliarta.png" alt="Movie" class="sm:w-24" /></figure>
                     <div
                         class="text-center mb-6 mt-4 sm:flex sm:flex-col sm:justify-center sm:text-left sm:ml-4 sm:mt-0 sm:mb-0">
@@ -687,7 +725,8 @@
                 </div>
             </div>
             <div class="grid gap-4 grid-cols-2 justify-items-center justify-center items-stretch mb-4">
-                <div class="card card-side bg-base-100 shadow-xl flex-col self-auto w-40 px-4 sm:w-72 sm:flex-row">
+                <div
+                    class="card card-side bg-base-100 shadow-xl flex-col self-auto w-40 px-4 sm:w-72 sm:flex-row sm:px-0 sm:pr-4">
                     <figure><img src="img/Alfiyan Yudha Alfathan.png" alt="Movie" class="sm:w-24" /></figure>
                     <div
                         class="text-center mb-6 mt-4 sm:flex sm:flex-col sm:justify-center sm:text-left sm:ml-4 sm:mt-0 sm:mb-0">
@@ -695,7 +734,8 @@
                         <p class="text-xs">Litbang Bidang 3</p>
                     </div>
                 </div>
-                <div class="card card-side bg-base-100 shadow-xl flex-col self-auto w-40 px-4 sm:w-72 sm:flex-row">
+                <div
+                    class="card card-side bg-base-100 shadow-xl flex-col self-auto w-40 px-4 sm:w-72 sm:flex-row sm:px-0 sm:pr-4">
                     <figure><img src="img/Ana Meliyana.png" alt="Movie" class="sm:w-24" /></figure>
                     <div
                         class="text-center mb-6 mt-4 sm:flex sm:flex-col sm:justify-center sm:text-left sm:ml-4 sm:mt-0 sm:mb-0">
@@ -706,7 +746,8 @@
             </div>
             <h3 class="text-center text-2xl font-semibold text-gray-900 mt-10 mb-4">Divisi Minat dan Bakat</h3>
             <div class="flex gap-4 justify-center mb-4">
-                <div class="card card-side bg-base-100 shadow-xl flex-col w-40 px-4 sm:w-72 sm:flex-row">
+                <div
+                    class="card card-side bg-base-100 shadow-xl flex-col w-40 px-4 sm:w-72 sm:flex-row sm:px-0 sm:pr-4">
                     <figure><img src="img/ADE HENDRIAWAN.png" alt="Movie" class="sm:w-24" /></figure>
                     <div
                         class="text-center mb-6 mt-4 sm:flex sm:flex-col sm:justify-center sm:text-left sm:ml-4 sm:mt-0 sm:mb-0">
@@ -716,7 +757,8 @@
                 </div>
             </div>
             <div class="grid gap-4 grid-cols-2 justify-items-center justify-center items-stretch mb-4">
-                <div class="card card-side bg-base-100 shadow-xl flex-col self-auto w-40 px-4 sm:w-72 sm:flex-row">
+                <div
+                    class="card card-side bg-base-100 shadow-xl flex-col self-auto w-40 px-4 sm:w-72 sm:flex-row sm:px-0 sm:pr-4">
                     <figure><img src="img/SHANIA ASFI.png" alt="Movie" class="sm:w-24" /></figure>
                     <div
                         class="text-center mb-6 mt-4 sm:flex sm:flex-col sm:justify-center sm:text-left sm:ml-4 sm:mt-0 sm:mb-0">
@@ -724,7 +766,8 @@
                         <p class="text-xs">Anggota MIKAT</p>
                     </div>
                 </div>
-                <div class="card card-side bg-base-100 shadow-xl flex-col self-auto w-40 px-4 sm:w-72 sm:flex-row">
+                <div
+                    class="card card-side bg-base-100 shadow-xl flex-col self-auto w-40 px-4 sm:w-72 sm:flex-row sm:px-0 sm:pr-4">
                     <figure><img src="img/UMY KULSUM.png" alt="Movie" class="sm:w-24" /></figure>
                     <div
                         class="text-center mb-6 mt-4 sm:flex sm:flex-col sm:justify-center sm:text-left sm:ml-4 sm:mt-0 sm:mb-0">
@@ -732,7 +775,8 @@
                         <p class="text-xs">Anggota MIKAT</p>
                     </div>
                 </div>
-                <div class="card card-side bg-base-100 shadow-xl flex-col self-auto w-40 px-4 sm:w-72 sm:flex-row">
+                <div
+                    class="card card-side bg-base-100 shadow-xl flex-col self-auto w-40 px-4 sm:w-72 sm:flex-row sm:px-0 sm:pr-4">
                     <figure><img src="img/SINTA OKTAVIA.png" alt="Movie" class="sm:w-24" /></figure>
                     <div
                         class="text-center mb-6 mt-4 sm:flex sm:flex-col sm:justify-center sm:text-left sm:ml-4 sm:mt-0 sm:mb-0">
@@ -740,7 +784,8 @@
                         <p class="text-xs">Anggota MIKAT</p>
                     </div>
                 </div>
-                <div class="card card-side bg-base-100 shadow-xl flex-col self-auto w-40 px-4 sm:w-72 sm:flex-row">
+                <div
+                    class="card card-side bg-base-100 shadow-xl flex-col self-auto w-40 px-4 sm:w-72 sm:flex-row sm:px-0 sm:pr-4">
                     <figure><img src="img/VELLA NOVIRA FAHMA.png" alt="Movie" class="sm:w-24" /></figure>
                     <div
                         class="text-center mb-6 mt-4 sm:flex sm:flex-col sm:justify-center sm:text-left sm:ml-4 sm:mt-0 sm:mb-0">
@@ -751,7 +796,7 @@
             </div>
             <h3 class="text-center text-2xl font-semibold text-gray-900 mt-10 mb-4">Divisi Pengabdian Masyarakat</h3>
             <div class="flex gap-4 justify-center mb-4">
-                <div class="card card-side bg-base-100 shadow-xl flex-col w-40 px-4 sm:w-72 sm:flex-row">
+                <div class="card card-side bg-base-100 shadow-xl flex-col w-40 px-4 sm:w-72 sm:flex-row sm:px-0 sm:pr-4">
                     <figure><img src="img/ANANDA PUTRI R.png" alt="Movie" class="sm:w-24" /></figure>
                     <div
                         class="text-center mb-6 mt-4 sm:flex sm:flex-col sm:justify-center sm:text-left sm:ml-4 sm:mt-0 sm:mb-0">
@@ -761,7 +806,7 @@
                 </div>
             </div>
             <div class="grid gap-4 grid-cols-2 justify-items-center justify-center items-stretch mb-4">
-                <div class="card card-side bg-base-100 shadow-xl flex-col self-auto w-40 px-4 sm:w-72 sm:flex-row">
+                <div class="card card-side bg-base-100 shadow-xl flex-col self-auto w-40 px-4 sm:w-72 sm:flex-row sm:px-0 sm:pr-4">
                     <figure><img src="img/ALVITO VILBERT MANURUNG.png" alt="Movie" class="sm:w-24" /></figure>
                     <div
                         class="text-center mb-6 mt-4 sm:flex sm:flex-col sm:justify-center sm:text-left sm:ml-4 sm:mt-0 sm:mb-0">
@@ -769,7 +814,7 @@
                         <p class="text-xs">Anggota PEMA</p>
                     </div>
                 </div>
-                <div class="card card-side bg-base-100 shadow-xl flex-col self-auto w-40 px-4 sm:w-72 sm:flex-row">
+                <div class="card card-side bg-base-100 shadow-xl flex-col self-auto w-40 px-4 sm:w-72 sm:flex-row sm:px-0 sm:pr-4">
                     <figure><img src="img/RIYANI MAULIDANI.png" alt="Movie" class="sm:w-24" /></figure>
                     <div
                         class="text-center mb-6 mt-4 sm:flex sm:flex-col sm:justify-center sm:text-left sm:ml-4 sm:mt-0 sm:mb-0">
@@ -777,7 +822,7 @@
                         <p class="text-xs">Anggota PEMA</p>
                     </div>
                 </div>
-                <div class="card card-side bg-base-100 shadow-xl flex-col self-auto w-40 px-4 sm:w-72 sm:flex-row">
+                <div class="card card-side bg-base-100 shadow-xl flex-col self-auto w-40 px-4 sm:w-72 sm:flex-row sm:px-0 sm:pr-4">
                     <figure><img src="img/TIYAR TAHIROTUN ANISAH.png" alt="Movie" class="sm:w-24" /></figure>
                     <div
                         class="text-center mb-6 mt-4 sm:flex sm:flex-col sm:justify-center sm:text-left sm:ml-4 sm:mt-0 sm:mb-0">
@@ -785,7 +830,7 @@
                         <p class="text-xs">Anggota PEMA</p>
                     </div>
                 </div>
-                <div class="card card-side bg-base-100 shadow-xl flex-col self-auto w-40 px-4 sm:w-72 sm:flex-row">
+                <div class="card card-side bg-base-100 shadow-xl flex-col self-auto w-40 px-4 sm:w-72 sm:flex-row sm:px-0 sm:pr-4">
                     <figure><img src="img/LAILA.png" alt="Movie" class="sm:w-24" /></figure>
                     <div
                         class="text-center mb-6 mt-4 sm:flex sm:flex-col sm:justify-center sm:text-left sm:ml-4 sm:mt-0 sm:mb-0">
